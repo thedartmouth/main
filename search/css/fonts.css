@@ -1,0 +1,14 @@
+/**
+ * Fonts Stylesheet
+ * Import and set fonts (there is an accompanying js file that must also be set in the head of the document for these to work in all browsers)
+ * 
+ **/
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+body
+	{
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;	
+	font-weight: 400;
+        color: #1a1a1a;
+	}
