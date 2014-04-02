@@ -1,5 +1,3 @@
-<div id="header_inner">
-
 <table class="brand">
 <tr>
 <td align="center">
@@ -17,4 +15,3 @@
 </td>
 </tr>
 </table>
-</div>

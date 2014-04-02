@@ -160,8 +160,12 @@ h5 {
 }
 
 .logo {
-	padding: 0 20px;
+	padding: 20px;
 }
+
+	.logo img {
+		max-height: 100px;
+	}
 
 .social {
 	margin: 10px;
