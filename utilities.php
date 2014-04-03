@@ -6,8 +6,8 @@
  * Defines useful functions used in other scripts
  *
  */
- 
-require_once 'configure.php'; 
+
+require_once 'configure.php';
 
 // Get mysqli connection object for primary DB
 function get_database_cxn(){
@@ -25,25 +25,25 @@ function get_database_cxn_legacy(){
 
 // Random string generator
 function random_string($stringLength = 10, $upperCase = TRUE, $lowerCase = TRUE, $numbers = TRUE){
-    // If requested string-length to short, reset to default length (10)	
+    // If requested string-length to short, reset to default length (10)
     $stringLength = intval($stringLength);
     if($stringLength < 1){
         $stringLength = 10;
-    }		
+    }
     // If user turned off all options, turn all back on (return to default settings)
     if(($upperCase == FALSE)&&($lowerCase == FALSE)&&($numbers == FALSE)){
         $uppercaseCase = TRUE;
         $lowerCase = TRUE;
         $numbers = TRUE;
     }
-    // Compile list total character-list (The list of available characters to build the new string out of).	
+    // Compile list total character-list (The list of available characters to build the new string out of).
     $characterList = '';
     if($upperCase == TRUE){
         $characterList.='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    }		
+    }
     if($lowerCase == TRUE){
         $characterList.='abcdefghijklmnopqrstuvwxyz';
-    }	
+    }
     if($numbers == TRUE){
         $characterList.='1234567890';
     }
@@ -52,10 +52,10 @@ function random_string($stringLength = 10, $upperCase = TRUE, $lowerCase = TRUE,
     $newString = '';
     $counter = 1;
     while($counter <= $stringLength){
-        $newString.= substr($characterList,(rand()%(strlen($characterList))), 1); 
+        $newString.= substr($characterList,(rand()%(strlen($characterList))), 1);
         $counter++;
     }
-    return $newString;		
+    return $newString;
 }
 
 // Get article url from id
@@ -65,7 +65,7 @@ function get_article_url($id = false){
         $cxn = get_database_cxn();
         $category = get_article_category($id);
         $query = "SELECT post_name, post_date FROM `wp_posts` where ID = '$id' limit 1";
-        $result = mysqli_query($cxn, $query) or die ('mysql select failure'); 
+        $result = mysqli_query($cxn, $query) or die ('mysql select failure');
         while($row = mysqli_fetch_array($result)){
             $post_name = $row['post_name'];
             $post_date = $row['post_date'];
@@ -133,7 +133,7 @@ function get_article_category($id){
                     extract($row4);
                     $category_names[] = $slug;
                 }
-            }                       
+            }
         }
         $category = (empty($category_names) ? '' : $category_names[0]);
     }

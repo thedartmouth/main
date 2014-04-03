@@ -382,10 +382,8 @@
 
 		<div class="span6" id="centrecol">
 				<?php
-				include("included.php");
 				$sports = getCategoryCached(3,3);
 				$arts = getCategoryCached(4,3);
-				//print_r($sports)
 				?>
 
 				<h2 class="green">Sports</h2>
