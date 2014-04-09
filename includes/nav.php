@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function echoActiveClassIfRequestMatches($requestUri)
 {
@@ -21,20 +21,20 @@ function echoActiveClassIfRequestMatches($requestUri)
 		      <span class="icon-bar icon-white"></span>
 		      <span class="icon-bar icon-white"></span>
 		    </button>
-		
+
 		</div>
 
 		<div class="nav-collapse">
 			<ul class="navbar-nav">
-				<li><a href="news.php" <?=echoActiveClassIfRequestMatches("news")?>>News</a></li>
-				<li><a href="opinion.php" <?=echoActiveClassIfRequestMatches("opinion")?>>Opinion</a></li>
-				<li><a href="sports.php" <?=echoActiveClassIfRequestMatches("sports")?>>Sports</a></li>
-				<li><a href="arts.php" <?=echoActiveClassIfRequestMatches("arts")?>>Arts</a></li>
-				<li><a href="mirror.php" <?=echoActiveClassIfRequestMatches("mirror")?>>Mirror</a></li>
-				<li><a href="dartbeat.php" <?=echoActiveClassIfRequestMatches("dartbeat")?>>Dartbeat</a></li>
+				<li><a href="/news" <?=echoActiveClassIfRequestMatches("news")?>>News</a></li>
+				<li><a href="/opinion" <?=echoActiveClassIfRequestMatches("opinion")?>>Opinion</a></li>
+				<li><a href="/sports" <?=echoActiveClassIfRequestMatches("sports")?>>Sports</a></li>
+				<li><a href="/arts" <?=echoActiveClassIfRequestMatches("arts")?>>Arts</a></li>
+				<li><a href="/mirror" <?=echoActiveClassIfRequestMatches("mirror")?>>Mirror</a></li>
+				<li><a href="/dartbeat" <?=echoActiveClassIfRequestMatches("dartbeat")?>>Dartbeat</a></li>
 				<li><a href="http://www.youtube.com/user/TheDartmouthVideo/" <?=echoActiveClassIfRequestMatches("media")?>>Media</a></li>
 				<li>
-					<form action="search.php"  method="get" class="form-search">
+					<form action="search"  method="get" class="form-search">
 						<input type="text" name="search" class="input-medium search-query" />
 						<input type="hidden" name="order" value="rel" />
 						<button type="submit" class="btn">Search</button>

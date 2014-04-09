@@ -8,7 +8,7 @@
   <body>
 		<!-- navs -->
   		<?php include("includes/navs.php"); ?>
-		
+
 		<!--content-->
 		<div class="content container-fluid">
 			<div class="row-fluid">
@@ -32,33 +32,27 @@
 						<p>We accept online advertisements in all standard formats. Our design team is also available to assist you in the creation of an advertisement at no cost.</p>
 
 					<h2>Deadlines & Payment</h2>
-						
+
 						<p>Ad designs must be received by noon two business days prior to the publication date.  New clients are required to prepay before the beginning of their marketing campaign.  Existing clients may remit payment in full within 30 days of invoicing.</p>
-						
+
 						<h3>Advertising Policy</h3>
-						
+
 						<p>The Dartmouth is published by The Dartmouth, Inc., an independent, non-profit corporation charted in the state of New Hampshire in 1939. All editorial and business decisions are made by students, without any interference from Dartmouth College. All advertisements are subject to the final approval of the Advertising Director and Publisher of The Dartmouth.</p>
 						<p>Tear sheets and billing statements are sent monthly; accounts are due at the end of the month in which the bill was received. Advertising will not be accepted from accounts with balances 30 days past due. Advertising rates are subject to change. Payment for political ads must be made at least two days in advance of publication, in compliance with federal law. Advertising canceled past noon on the day preceding publication will be removed from the issue, but the advertiser remains liable for full payment. The Dartmouth, Inc. assumes no liability for its failure to print an advertisement or for typographical and other errors in ad material. In the event of a printing error, The Dartmouth will reprint the ad at no cost; reimbursements are only issued in the event an ad becomes untimely. Errors must be reported no later than five days after publication. Placement for advertising on TheDartmouth.com is not guaranteed.</p>
 						<p>The advertiser and/or agency agrees to assume full and complete responsibility for the content of any advertisement placed in The Dartmouth. Advertising simulating editorial content must run with the words “Paid Advertisement” in 10-point or larger typeface.</p>
 				</div>
 
-				<div class="span3" id="rightcol">
-					<h2 class="nobg">About Us</h2>
-					<p><a href="about.php">About The Dartmouth</a></p>
-					<p><a href="advertise.php">Advertise</a></p>
-					<p><a href="donate.php">Donate</a></p>
-					<p> <a href="subscribe.php">Subscribe</a></p>
-					<p><a href="policies.php">Policies</a></p>
-				</div>
+                                            <?php include("includes/aboutnav.php"); ?>
+
 			</div>
 		</div>
-		
+
 		<!--footer-->
 		<div class="row-fluid">
 			<div id="footer">
 				<?php include("includes/footer.php"); ?>
 			</div>
 		</div>
-	
+
   </body>
 </html>

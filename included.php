@@ -141,7 +141,7 @@ function printMostPopular(){
 		$mvPostTitle = htmlentities($mvPost['post_title'], ENT_QUOTES, 'cp1252');
 		$mvDate = $mvPost['post_date'];
 
-		echo "<p>$x. <a href='article.php?postID=$mvPostID'>$mvPostTitle</a></p>\n";
+		echo "<p>$x. <a href='/article.php?postID=$mvPostID'>$mvPostTitle</a></p>\n";
 		$x++;
 	 }
 }

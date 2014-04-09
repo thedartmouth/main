@@ -134,7 +134,7 @@ print_r(apc_cache_info());
 						?>
 
 						<div class="story">
-						<h4><a href="article.php?id=<?= $article['id'] ?>">
+						<h4><a href="/article.php?id=<?= $article['id'] ?>">
 						<?= $article['title'] ?>
 						</a></h4><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p>
 						<?
@@ -184,7 +184,7 @@ print_r(apc_cache_info());
 
 						?>
 							<div id="rotate<?= $x ?>" class="rotate_item<? if($x > 0) echo " hide"; ?>"> <img src="<?= $imageURL ?>" />
-								<div class="rotate_headline"> <a href="article.php?id=<?= $objectID ?>">
+								<div class="rotate_headline"> <a href="/article.php?id=<?= $objectID ?>">
 									<h1 class="featured"><?= $title ?></h1>
 									</a>
 									<p><?= $summary ?></p>
@@ -199,11 +199,11 @@ print_r(apc_cache_info());
 
 				?>
 			<br/><center class="scroll-images">
-				<a href="javascript:prev()"><img src="img/left-arrow.png" /></a>
+				<a href="javascript:prev()"><img src="/img/left-arrow.png" /></a>
 				<?php
 				echo $navs;
 			?>
-				<a href="javascript:next()"><img src="img/right-arrow.png" /></a>
+				<a href="javascript:next()"><img src="/img/right-arrow.png" /></a>
 			</center>
 			</td>
 
@@ -273,7 +273,7 @@ print_r(apc_cache_info());
 
 
 				?>
-				<div class="story"><h4 class="first"><a href="article.php?id=<?= $current['id'] ?>">
+				<div class="story"><h4 class="first"><a href="/article.php?id=<?= $current['id'] ?>">
 				<?= $current['title'] ?>
 				</a></h4>
 				<div class="clearfix"></div>
@@ -290,7 +290,7 @@ print_r(apc_cache_info());
 					?>
 
 					<div class="story">
-					<h4><a href="article.php?id=<?= $article['id'] ?>">
+					<h4><a href="/article.php?id=<?= $article['id'] ?>">
 					<?= $article['title'] ?>
 					</a></h4><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p></div>
 					<?
@@ -374,7 +374,7 @@ print_r(apc_cache_info());
 
 					?>
 						<img src="<?= $current['image'] ?>" />
-						<h4><a href="article.php?id=<?= $current['id'] ?>">
+						<h4><a href="/article.php?id=<?= $current['id'] ?>">
 						<?= $current['title'] ?>
 						</a></h4>
 						<p class="byline">By <?= ($current['author'])."" ?> <span class='green'><?= $current['date'] ?></span></p>
@@ -387,7 +387,7 @@ print_r(apc_cache_info());
 
 							?>
 
-							<h5><a href="article.php?id=<?= $article['id'] ?>">
+							<h5><a href="/article.php?id=<?= $article['id'] ?>">
 							<?= $article['title'] ?>
 							</a></h5><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p>
 						<p><?= $article['summary'] ?></p>
@@ -427,7 +427,7 @@ print_r(apc_cache_info());
 
 					?>
 						<img src="<?= $current['image'] ?>" />
-						<h4><a href="article.php?id=<?= $current['id'] ?>">
+						<h4><a href="/article.php?id=<?= $current['id'] ?>">
 						<?= $current['title'] ?>
 						</a></h4>
 						<p class="byline">By <?= ($current['author'])."" ?> <span class='green'><?= $current['date'] ?></span></p>
@@ -441,7 +441,7 @@ print_r(apc_cache_info());
 
 							?>
 
-							<h5><a href="article.php?id=<?= $article['id'] ?>">
+							<h5><a href="/article.php?id=<?= $article['id'] ?>">
 							<?= $article['title'] ?>
 							</a></h5><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p>
 						<p><?= $article['summary'] ?></p>
@@ -482,7 +482,7 @@ print_r(apc_cache_info());
 
 					?>
 						<img src="<?= $current['image'] ?>" />
-						<h4><a href="article.php?id=<?= $current['id'] ?>">
+						<h4><a href="/article.php?id=<?= $current['id'] ?>">
 						<?= $current['title'] ?>
 						</a></h4>
 						<p class="byline">By <?= ($current['author'])."" ?> <span class='green'><?= $current['date'] ?></span></p>
@@ -496,7 +496,7 @@ print_r(apc_cache_info());
 
 							?>
 
-							<h5><a href="article.php?id=<?= $article['id'] ?>">
+							<h5><a href="/article.php?id=<?= $article['id'] ?>">
 							<?= $article['title'] ?>
 							</a></h5><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p>
 						<p><?= $article['summary'] ?></p>
