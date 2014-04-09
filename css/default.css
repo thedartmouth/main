@@ -237,6 +237,20 @@ h5 {
     z-index: 10000;
 }
 
+.about-nav {
+	margin: 0px;
+}
+
+.about-nav li {
+	text-align: left;
+	display: block;
+	margin: 4px 0;
+}
+
+.about-nav form {
+	margin: 0;
+}
+
 #breaking {
 	background-color:#f5f5f5;
 	padding:7px;
