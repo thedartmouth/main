@@ -1,7 +1,7 @@
 /**
  * Core javascript
  * Governs javascript for search pages
- * 
+ *
  **/
 
 
@@ -15,7 +15,7 @@ $(document).ready(function() {
     var loading_id = 'loading_search_results';
     var more_id = 'more_search_results';
     var results_container_id = 'search_results_wrapper';
-        
+
     // On search form submit, grab input text, fetch results
     $('form#'+form_id).live('submit',function(event){
         // Prevent default
@@ -23,29 +23,29 @@ $(document).ready(function() {
 
         // Log the event
         console.log('Search form submitted');
-        
+
         // Empty results container
         $('#'+results_container_id).empty();
-        
+
         // Hide the "no results" text (if applicable)
         $('#no_results').hide();
-        
+
         // Show loading bar
         $('#'+loading_id).fadeIn();
-        
+
         // Hide the more bar
         $('#'+more_id).hide();
-        
+
         // Grab parameters
         var parameters = 'randkey='+new Date().getTime();
         $('#'+form_id+' input, #'+form_id+' select, #'+form_id+' textarea').each(function(index){
             var input_name = $(this).attr('name');
             var input_value = $(this).val();
             parameters += '&'+input_name+'='+input_value;
-        });         
-        
-        // Submit Query           
-        $.getJSON("search/process_query.php",parameters,    
+        });
+
+        // Submit Query
+        $.getJSON("search/process_query.php",parameters,
         function(ajax_response){
             if(ajax_response.response.type == 'success') {
                 // Form submission successful
@@ -70,7 +70,7 @@ $(document).ready(function() {
         .error(function() {
             console.log('Error getting JSON from process_query page');
             $('#'+loading_id).hide();
-        });    
+        });
     });
 
 
@@ -92,10 +92,10 @@ function show_results(){
 
 // Show a single result
 function show_single_result(article_id){
-    console.log('entered');                    
+    console.log('entered');
     // Submit Query
     var parameters = 'id='+article_id+'&randkey='+new Date().getTime();
-    $.getJSON("search/get_article_preview.php",parameters,    
+    $.getJSON("search/get_article_preview.php",parameters,
     function(ajax_response){
         if(ajax_response.response.type == 'success') {
             // Form result grabbed successfully
@@ -105,14 +105,14 @@ function show_single_result(article_id){
             var date = ajax_response.response.data.date;
             var url = ajax_response.response.data.url;
             var article_id = ajax_response.response.data.id;
-            $('#'+results_container_id).append('<div class="result_item" id="article_id_'+article_id+'"><div class="date">'+date+'</div><div class="headline">'+headline+'</div><div class="content"><div class="authors">By: </div><div>'+content+'...</div></div><a class="url" href="'+url+'">'+url+'</a></div>');
+            $('#'+results_container_id).append('<div class="result_item" id="article_id_'+article_id+'"><div class="date">'+date+'</div><div class="headline"><a class="url" href="'+url+'">'+headline+'</a></div><div class="content"><div class="authors">By: </div><div>'+content+'...</div></div></div>');
             $.each(authors, function(key, value) {
                 var author_name = value.name;
                 var author_id = value.id;
-                $('#article_id_'+article_id+' .authors').append('<a class="author" href="staff.php?id='+author_id+'" id="author_id_'+author_id+'">'+author_name+'</a>');  
+                $('#article_id_'+article_id+' .authors').append('<a class="author" href="staff.php?id='+author_id+'" id="author_id_'+author_id+'">'+author_name+'</a>');
             });
-            
-            
+
+
         } else {
             // Show the error message
             console.log('Error getting article preview');
