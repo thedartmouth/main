@@ -102,15 +102,8 @@
 							</tr>
 						</table>
 				</div>
+                                            <?php include("includes/aboutnav.php"); ?>
 
-				<div class="span3" id="rightcol">
-					<h2 class="nobg">About Us</h2>
-					<p><a href="about.php">About The Dartmouth</a></p>
-					<p><a href="advertise.php">Advertise</a></p>
-					<p><a href="donate.php">Donate</a></p>
-					<p> <a href="subscribe.php">Subscribe</a></p>
-					<p><a href="policies.php">Policies</a></p>
-				</div>
 			</div>
 		</div>
 

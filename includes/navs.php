@@ -16,7 +16,7 @@
 
     <!--nav-->
     <div class="row-fluid">
-    	<div id="nav" class="navbar" role="navigation">	
+    	<div id="nav" class="navbar" role="navigation">
     		<?php include("includes/nav.php"); ?>
         </div>
     </div>

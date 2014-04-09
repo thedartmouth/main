@@ -81,7 +81,7 @@ $catID = 5;
 
 						<div class="span6">
 							<p><img src="<?= $current['image'] ?>" /></p>
-							<h3 class="first"><a href="article.php?id=<?= $current['id'] ?>"><?= $current['title'] ?></a></h3>
+							<h3 class="first"><a href="/article.php?id=<?= $current['id'] ?>"><?= $current['title'] ?></a></h3>
 							<p class="byline">By <?= ($current['author'])."" ?> <span class='green'><?= $current['date'] ?></span></p>
 							<p><?= $current['summary'] ?></p>
 							<p>&nbsp;</p>
@@ -91,7 +91,7 @@ $catID = 5;
 						$countLeft = 0;
 						foreach($output[0] as $article){ ?>
 
-							<h3><a href="article.php?id=<?= $article['id'] ?>">
+							<h3><a href="/article.php?id=<?= $article['id'] ?>">
 							<?= $article['title'] ?>
 							</a></h3><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p>
 							<? if($countLeft < 2){ ?><p><?= $article['summary'] ?></p><? } ?>
@@ -108,7 +108,7 @@ $catID = 5;
 						$countRight = 0;
 						foreach($output[1] as $article){ ?>
 
-							<h3><a href="article.php?id=<?= $article['id'] ?>">
+							<h3><a href="/article.php?id=<?= $article['id'] ?>">
 							<?= $article['title'] ?>
 							</a></h3><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p>
 							<? if($countRight < 4){ ?><p><?= $article['summary'] ?></p><? } ?>

@@ -122,7 +122,7 @@
 						?>
 
 						<div class="story">
-						<h4><a href="article.php?id=<?= $article['id'] ?>">
+						<h4><a href="/article.php?id=<?= $article['id'] ?>">
 						<?= $article['title'] ?>
 						</a></h4><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p>
 						<?
@@ -172,7 +172,7 @@
 
 						?>
 							<div id="rotate<?= $x ?>" class="rotate_item<? if($x > 0) echo " hide"; ?>"> <img src="<?= $imageURL ?>" />
-								<div class="rotate_headline"> <a href="article.php?id=<?= $objectID ?>">
+								<div class="rotate_headline"> <a href="/article.php?id=<?= $objectID ?>">
 									<h1 class="featured"><?= $title ?></h1>
 									</a>
 									<p><?= $summary ?></p>
@@ -187,11 +187,11 @@
 
 				?>
 			<br/><center class="scroll-images">
-				<a href="javascript:prev()"><img src="img/left-arrow.png" /></a>
+				<a href="javascript:prev()"><img src="/img/left-arrow.png" /></a>
 				<?php
 				echo $navs;
 			?>
-				<a href="javascript:next()"><img src="img/right-arrow.png" /></a>
+				<a href="javascript:next()"><img src="/img/right-arrow.png" /></a>
 			</center>
 			</td>
 
@@ -291,7 +291,7 @@
 
 
 				?>
-				<div class="story"><h4 class="first"><a href="article.php?id=<?= $current['id'] ?>">
+				<div class="story"><h4 class="first"><a href="/article.php?id=<?= $current['id'] ?>">
 				<?= $current['title'] ?>
 				</a></h4>
 				<div class="clearfix"></div>
@@ -308,7 +308,7 @@
 					?>
 
 					<div class="story">
-					<h4><a href="article.php?id=<?= $article['id'] ?>">
+					<h4><a href="/article.php?id=<?= $article['id'] ?>">
 					<?= $article['title'] ?>
 					</a></h4><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p></div>
 					<?
@@ -406,7 +406,7 @@
 
 					?>
 						<img src="<?= $current['image'] ?>" />
-						<h4><a href="article.php?id=<?= $current['id'] ?>">
+						<h4><a href="/article.php?id=<?= $current['id'] ?>">
 						<?= $current['title'] ?>
 						</a></h4>
 						<p class="byline">By <?= ($current['author'])."" ?> <span class='green'><?= $current['date'] ?></span></p>
@@ -419,7 +419,7 @@
 
 							?>
 
-							<h5><a href="article.php?id=<?= $article['id'] ?>">
+							<h5><a href="/article.php?id=<?= $article['id'] ?>">
 							<?= $article['title'] ?>
 							</a></h5><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p>
 						<p><?= $article['summary'] ?></p>
@@ -478,7 +478,7 @@
 
 					?>
 						<img src="<?= $current['image'] ?>" />
-						<h4><a href="article.php?id=<?= $current['id'] ?>">
+						<h4><a href="/article.php?id=<?= $current['id'] ?>">
 						<?= $current['title'] ?>
 						</a></h4>
 						<p class="byline">By <?= ($current['author'])."" ?> <span class='green'><?= $current['date'] ?></span></p>
@@ -492,7 +492,7 @@
 
 							?>
 
-							<h5><a href="article.php?id=<?= $article['id'] ?>">
+							<h5><a href="/article.php?id=<?= $article['id'] ?>">
 							<?= $article['title'] ?>
 							</a></h5><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p>
 						<p><?= $article['summary'] ?></p>
@@ -547,7 +547,7 @@
 
 					?>
 						<img src="<?= $current['image'] ?>" />
-						<h4><a href="article.php?id=<?= $current['id'] ?>">
+						<h4><a href="/article.php?id=<?= $current['id'] ?>">
 						<?= $current['title'] ?>
 						</a></h4>
 						<p class="byline">By <?= ($current['author'])."" ?> <span class='green'><?= $current['date'] ?></span></p>
@@ -561,7 +561,7 @@
 
 							?>
 
-							<h5><a href="article.php?id=<?= $article['id'] ?>">
+							<h5><a href="/article.php?id=<?= $article['id'] ?>">
 							<?= $article['title'] ?>
 							</a></h5><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p>
 						<p><?= $article['summary'] ?></p>
