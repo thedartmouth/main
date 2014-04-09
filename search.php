@@ -12,7 +12,7 @@ $query = (isset($_REQUEST['search']) ? $_REQUEST['search'] : '');
 	<title>The Dartmouth - Search</title>
 	<?php include("includes/htmlhead.php"); ?>
         <script type="text/javascript" src="/search/js/core.js"></script>
-    <link type="text/css" href="search/css/core.css" rel="stylesheet" />
+    <link type="text/css" href="/search/css/core.css" rel="stylesheet" />
   </head>
   <body>
 		<!-- navs -->
@@ -27,10 +27,10 @@ $query = (isset($_REQUEST['search']) ? $_REQUEST['search'] : '');
                                         <form method="get" action="" name="search_form" id="search_form" class="form-inline">
                                         <input type="text" name="query" id="search_input" size="40" maxlength="100" value="<?php print $query; ?>" class="input-large search-query"  />
                                         <select name="order" id="search_select" class="input-small">
-                                            <option value="none" selected="selected">Sort by...</option>
+                                            <option value="none">Sort by...</option>
                                             <option value="rel">Relevance</option>
                                             <option value="date_asc">Date (Ascending)</option>
-                                            <option value="date_desc">Date (Descending)</option>
+                                            <option value="date_desc" selected="selected">Date (Descending)</option>
                                         </select>
                                         <input type="submit" id="search_submit" name="submit" class="btn" value="Search" />
                                         </form>

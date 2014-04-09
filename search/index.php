@@ -20,17 +20,17 @@ require_once 'helpers.php';
     <title>Search Example | <?php print SITE_TITLE ?></title>
     <meta http-equiv="content-language" content="en-us" />
     <base href="<?php print DIR_WS_RELATIVE_BASE ?>search/" target="_self" />
-    <link type="text/css" href="/css/reset.css" rel="stylesheet" />
+    <link type="text/css" href="css/reset.css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css" />
-    <link type="text/css" href="/css/fonts.css" rel="stylesheet" />
-    <link type="text/css" href="/css/core.css" rel="stylesheet" />
-    <link type="text/css" href="/css/ie.css" rel="stylesheet" />
+    <link type="text/css" href="css/fonts.css" rel="stylesheet" />
+    <link type="text/css" href="css/core.css" rel="stylesheet" />
+    <link type="text/css" href="css/ie.css" rel="stylesheet" />
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
     <link type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery.ui.all.css" rel="stylesheet" />
-    <script type="text/javascript" src="/js/core.js"></script>
-    <script type="text/javascript" src="/js/frame_breaker.js"></script>
-    <script type="text/javascript" src="/js/detect_ie.js"></script>
+    <script type="text/javascript" src="js/core.js"></script>
+    <script type="text/javascript" src="js/frame_breaker.js"></script>
+    <script type="text/javascript" src="js/detect_ie.js"></script>
 </head>
 <body id="body">
     <div id="header">

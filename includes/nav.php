@@ -35,7 +35,7 @@ function echoActiveClassIfRequestMatches($requestUri)
 				<li><a href="/dartbeat" <?=echoActiveClassIfRequestMatches("dartbeat")?>>Dartbeat</a></li>
 				<li><a href="http://www.youtube.com/user/TheDartmouthVideo/" <?=echoActiveClassIfRequestMatches("media")?>>Media</a></li>
 				<li>
-					<form action="search"  method="get" class="form-search">
+					<form action="/search.php"  method="get" class="form-search">
 						<input type="text" name="search" class="input-medium search-query" />
 						<input type="hidden" name="order" value="rel" />
 						<button type="submit" class="btn">Search</button>
