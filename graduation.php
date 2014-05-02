@@ -21,8 +21,8 @@
                     $("#step1-header").addClass("grey");
                     $("#step2-header").removeClass("grey");
 
-                    $("#step1").addClass("hide");
-                    $("#step2").removeClass("hide");
+                    $("#step1").addClass('hide');
+                    $("#step2").removeClass('hide');
                 }
             });
         });
@@ -56,31 +56,31 @@
                             <div class="control-group">
                                 <label class="control-label" for="billingName">Your Name</label>
                                 <div class="controls">
-                                    <input type="text" id="billingName" name="billingName" placeholder="Your Name">
+                                    <input type="text" id="billingName" name="billingName" placeholder="Your Name" required>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="billingEmail">Your Email</label>
                                 <div class="controls">
-                                    <input type="text" id="billingEmail" name="billingEmail" placeholder="Your Email">
+                                    <input type="text" id="billingEmail" name="billingEmail" placeholder="Your Email" required>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="studentName">Student Name</label>
                                 <div class="controls">
-                                    <input type="text" id="studentName" name="studentName" placeholder="Student Name">
+                                    <input type="text" id="studentName" name="studentName" placeholder="Student Name" required>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="message">Message (35-40 words)<br><span id="remaining">40</span> words remaining</label>
                                 <div class="controls">
-                                    <textarea rows="3" id="message" name="message" placeholder="Enter message here."></textarea>
+                                    <textarea rows="3" id="message" name="message" placeholder="Enter message here." required></textarea>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="image">Attach an Image</label>
                                 <div class="controls">
-                                    <input type="file" id="image" name="image" accept="image/jpg">
+                                    <input type="file" id="image" name="image" accept="image/jpg" required>
                                 </div>
                             </div>
                             <div class="control-group">
@@ -92,13 +92,7 @@
                         <div id="loading" class="hide">Please wait...</div>
                     </div>
                     <div id="step2" class="hide text-center">
-                        <h3>Your ad has been submitted, but we must receive payment to publish.<h3>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="BCEG5U8597FSG">
-                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                        </form>
+
                     </div>
                     <h5>
                         If you have any questions or requests, please contact <a href="mailto:graduation@thedartmouth.com">graduation@thedartmouth.com</a>
