@@ -1,12 +1,5 @@
 <div class="navigation row-fluid">
 
-    <!--topnav-->
-    <div class="row-fluid">
-    	<div id="topnav">
-    		<?php include("includes/topnav.php"); ?>
-        </div>
-    </div>
-
     <!--header-->
     <div class="row-fluid">
     	<div id="header">

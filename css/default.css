@@ -208,7 +208,13 @@ h5 {
 		}
 
 	.form-search {
-		margin-bottom: 10px;
+		margin-bottom: 0px;
+		position: relative;
+		top: -4px;
+	}
+
+	.form-search .btn {
+		margin-top: 0px;
 	}
 
 .btn-navbar {
@@ -239,12 +245,14 @@ h5 {
 
 .about-nav {
 	margin: 0px;
+	display: inline;
 }
 
 .about-nav li {
-	text-align: left;
-	display: block;
+	text-align: center;
+	border-left: 1px #999 solid;
 	margin: 4px 0;
+	padding: 0 10px 0 12px;
 }
 
 .about-nav form {
@@ -270,6 +278,10 @@ h5 {
 #featured {
 	margin:0;
 }
+	.scroll-images {
+		margin-bottom: 5px;
+	}
+
 	.scroll-images img {
 		height: 73px;
 	}
@@ -308,7 +320,7 @@ h5 {
 	}
 
 #rightcol {
-	padding: 7px 15px;
+	padding: 0 0 7px 15px;
 	margin: 0 auto;
 }
 
@@ -335,7 +347,7 @@ iframe[id^='twitter-widget-'] {
 		padding-left:5px;
 	}
 
-	#rightcol h2 {
+	#abovefold #rightcol h2 {
 		color:#FFF;
 		width:100%;
 		background-color:#557325;
@@ -390,6 +402,10 @@ iframe[id^='twitter-widget-'] {
 		margin-left:15px;
 	}*/
 
+.green {
+	margin-top: 10px;
+}
+
 #articlepic {
 	margin-top:10px;
 	margin-bottom:10px;
@@ -430,7 +446,9 @@ iframe[id^='twitter-widget-'] {
 	}
 
 	#footer p   {
-		font-size:11px;
+		font-size:14px;
+		padding-right: 5px;
+		display: inline;
 	}
 
 /*Graduation Ad Form*/
@@ -455,4 +473,9 @@ iframe[id^='twitter-widget-'] {
     body {
     	padding: 0;
     }
+}
+
+.test {
+	min-width: 100%;
+	background-color: black;
 }
