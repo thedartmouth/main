@@ -285,6 +285,10 @@ define('DIR_FS_INCLUDES', DIR_FS_ROOT . 'includes/');
 define('DIR_FS_CLASSES', DIR_FS_ROOT . 'classes/');
 define('DIR_FS_TMP', DIR_FS_ROOT . 'tmp/');
 
+// Define Google Drive settings
+define('GDOCS_USERNAME', "thedartmouth@gmail.com");
+define('GDOCS_PASSWORD', "17aocn99");
+define("DROPBOX_TOKEN", "VwZ8EEkkJB4AAAAAAAAABVVsyYRN4fy1kPUvVrV5l621lVnLXPy56o-5X3XON0sq");
 
 // Unset variables
 unset($current_url);

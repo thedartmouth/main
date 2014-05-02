@@ -433,6 +433,24 @@ iframe[id^='twitter-widget-'] {
 		font-size:11px;
 	}
 
+/*Graduation Ad Form*/
+
+#grad-ad-header {
+	margin-left: 2.564102564102564%;
+}
+
+#grad-form {
+	padding: 20px;
+}
+
+#step2 {
+	text-align: center;
+}
+
+.grey {
+	color: grey;
+}
+
 @media (max-width: 767px){
     body {
     	padding: 0;
