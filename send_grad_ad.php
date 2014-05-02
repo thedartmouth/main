@@ -43,7 +43,7 @@ $ss->addRow($row);
 
 // Send email
 //define the receiver of the email
-$to = 'publisher@thedartmouth.com';
+$to = 'graduation@thedartmouth.com';
 //define the subject of the email
 $subject = "[NEW GRAD AD] $uploadFilename";
 //create a boundary string. It must be unique

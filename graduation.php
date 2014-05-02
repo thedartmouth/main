@@ -100,6 +100,9 @@
                             <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                         </form>
                     </div>
+                    <h5>
+                        If you have any questions or requests, please contact <a href="mailto:graduation@thedartmouth.com">graduation@thedartmouth.com</a>
+                    </h5>
                 </div>
                 <div class="span3">
                 </div>
