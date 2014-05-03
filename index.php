@@ -230,7 +230,7 @@
 					</div><br />
 
 					<div class="ad">
-					<!-- FirstBox -->
+					<!-- Half Banner -->
 					<!--/* OpenX JavaScript tag */-->
 
 					<!-- /*
@@ -243,12 +243,13 @@
 
 					<script type="text/javascript">
 					if (!window.OX_ads) { OX_ads = []; }
-					OX_ads.push({ "auid" : "536871734" });
+					OX_ads.push({ "auid" : "537102484" });
 					</script>
 					<script type="text/javascript">
 					document.write('<scr'+'ipt src="http://ox-d.oncampusweb.com/w/1.0/jstag"><\/scr'+'ipt>');
 					</script>
-					<noscript><iframe id="bca5e6fc2a" name="bca5e6fc2a" src="http://ox-d.oncampusweb.com/w/1.0/afr?auid=536871734&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="250" height="250"><a href="http://ox-d.oncampusweb.com/w/1.0/rc?cs=bca5e6fc2a&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.oncampusweb.com/w/1.0/ai?auid=536871734&cs=bca5e6fc2a&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
+					<noscript><iframe id="cdee18542e" name="cdee18542e" src="http://ox-d.oncampusweb.com/w/1.0/afr?auid=537102484&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="234" height="60"><a href="http://ox-d.oncampusweb.com/w/1.0/rc?cs=cdee18542e&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.oncampusweb.com/w/1.0/ai?auid=537102484&cs=cdee18542e&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
+
 				</div>
 
 				<!--	<h2>Dartbeat</h2>
@@ -285,6 +286,9 @@
 			<div class="span4 pull-right" id="rightcol">
 				<?php include("includes/topstories.php"); ?>
 
+				<div class="line">&nbsp;</div>
+				<br>
+
 				<h2 class="green">Opinion</h2>
 
 				<?php
@@ -297,9 +301,9 @@
 
 
 				?>
-				<div class="story"><h4 class="first"><a href="/article.php?id=<?= $current['id'] ?>">
+				<div class="story"><h5 class="first"><a href="/article.php?id=<?= $current['id'] ?>">
 				<?= $current['title'] ?>
-				</a></h4>
+				</a></h5>
 				<div class="clearfix"></div>
 				<p class="byline">By <?= ($current['author'])."" ?> <span class='green'><?= $current['date'] ?></span></p>
 				<p><?= $current['summary'] ?></p>
@@ -314,9 +318,10 @@
 					?>
 
 					<div class="story">
-					<h4><a href="/article.php?id=<?= $article['id'] ?>">
+					<h5><a href="/article.php?id=<?= $article['id'] ?>">
 					<?= $article['title'] ?>
-					</a></h4><p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p></div>
+					</a></h5>
+					<p class="byline">By <?= ($article['author'])."" ?> <span class='green'><?= $article['date'] ?></span></p></div>
 					<?
 				}
 
@@ -376,9 +381,9 @@
 			</div>
 
 
-			<div class="hidden-phone hidden-tablet"><div class="line">&nbsp;</div></div>
+<!-- 			<div class="hidden-phone hidden-tablet"><div class="line">&nbsp;</div></div>
 			<br />
-
+ -->
 			<div><div class="line">&nbsp;</div></div>
 			<br />
 
@@ -427,8 +432,8 @@
 					</div>
 			</div>
 
-			<div class="hidden-phone hidden-tablet"><div class="line">&nbsp;</div></div>
-
+<!-- 			<div class="hidden-phone hidden-tablet"><div class="line">&nbsp;</div></div>
+ -->
 			<div><div class="line">&nbsp;</div></div>
 			<br />
 					<?php

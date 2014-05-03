@@ -139,9 +139,8 @@ function printMostPopular(){
 	 while($mvPost = mysqli_fetch_array($mostViewedPosts)){
 		$mvPostID = $mvPost['ID'];
 		$mvPostTitle = htmlentities($mvPost['post_title'], ENT_QUOTES, 'cp1252');
-		$mvDate = $mvPost['post_date'];
 
-		echo "<p>$x. <a href='/article.php?postID=$mvPostID'>$mvPostTitle</a></p>\n";
+		echo "<h4><a href='/article.php?postID=$mvPostID'>$mvPostTitle</a></h4>";
 		$x++;
 	 }
 }
