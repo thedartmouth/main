@@ -478,7 +478,32 @@
 						?>
 					</div>-->
 				<div class="span12"><iframe scrolling="no" marginheight="0" frameborder="0" width="480" src="https://ytchannelembed.com/gallery.php?vids=9&amp;user=TheDartmouthVideo&amp;row=3&amp;width=150&amp;hd=1&amp;margin_right=15&amp;desc=100&amp;desc_color=9E9E9E&amp;title=30&amp;title_color=000000&amp;views=0&amp;likes=0&amp;dislikes=0&amp;fav=0&amp;playlist=" style="height: 728px;"></iframe></div>
-			</div>
+				</div>
+
+			<div><div class="line">&nbsp;</div></div>
+			<br />
+
+				<div class="row-fluid">
+					<?php
+                        			$cxn = get_database_cxn();
+					$linkResultPaper = mysqli_query($cxn, "SELECT `post_content` FROM `wp_posts` WHERE `ID`='101604' LIMIT 1");
+					$linkResultMirror = mysqli_query($cxn, "SELECT `post_content` FROM `wp_posts` WHERE `ID`='101603' LIMIT 1");
+
+					$paper = mysqli_fetch_array($linkResultPaper);
+					$mirror = mysqli_fetch_array($linkResultMirror);
+					?>
+
+					<div class="span6">
+						<h2 class="nobg">Today's Paper</h2>
+						<center>
+						<?= $paper['post_content']; ?></center>
+					</div>
+					<div class="span6">
+						<h2 class="nobg">Mirror</h2>
+						<center>
+						<?= $mirror['post_content']; ?></center>
+					</div>
+				</div>
 			</div>
 
 
