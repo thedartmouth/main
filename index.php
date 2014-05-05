@@ -289,7 +289,7 @@
 				<div class="line">&nbsp;</div>
 				<br>
 
-				<h2 class="green">Opinion</h2>
+				<h2 class="green"><a href="/opinion">Opinion</a></h2>
 
 				<?php
 
@@ -335,7 +335,7 @@
 				$arts = getCategoryCached(4,3);
 				?>
 
-				<h2 class="green">Sports</h2>
+				<h2 class="green"><a href="/sports">Sports</a></h2>
 				<div class="row-fluid">
 
 				<div class="span6">
@@ -387,7 +387,7 @@
 			<div><div class="line">&nbsp;</div></div>
 			<br />
 
-				<h2 class="green">Arts</h2>
+				<h2 class="green"><a href="/arts">Arts</a></h2>
 				<div class="row-fluid">
 				<div class="span6"><?php
 
@@ -441,7 +441,7 @@
 					$media = getCategoryCached(1130,3);
 
 					?>
-				<h2 class="green"><a href="multimedia.php">Multimedia</a></h2>
+				<h2 class="green">Multimedia</h2>
 				<div class="row-fluid">
 				<!--				<div class="span3"><?php
 
