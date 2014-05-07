@@ -9,8 +9,10 @@
 
     <!--nav-->
     <div class="row-fluid">
+        <div id="nav-wrapper">
     	<div id="nav" class="navbar" role="navigation">
     		<?php include("includes/nav.php"); ?>
+            </div>
         </div>
     </div>
 </div>
