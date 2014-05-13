@@ -20,9 +20,9 @@ define('STANDARD_ERROR_MIGRATION', 'Sorry an error has occured');
 switch($_SERVER['HTTP_HOST']){
 
     // localhost
-    case 'localhost:80' :
+    case 'localhost:1230' :
     case 'localhost' :
-        $ws_root = 'http://localhost:80/';
+        $ws_root = 'http://localhost:1230/';
         $ws_relative_base = '/';
         # Primary DB
         $db_host = 'localhost';
