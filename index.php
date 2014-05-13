@@ -230,7 +230,7 @@
 					</div><br />
 
 					<div class="ad">
-					<!-- Half Banner -->
+					<!-- Custom Ad Size -->
 					<!--/* OpenX JavaScript tag */-->
 
 					<!-- /*
@@ -243,12 +243,12 @@
 
 					<script type="text/javascript">
 					if (!window.OX_ads) { OX_ads = []; }
-					OX_ads.push({ "auid" : "537102484" });
+					OX_ads.push({ "auid" : "537108126" });
 					</script>
 					<script type="text/javascript">
 					document.write('<scr'+'ipt src="http://ox-d.oncampusweb.com/w/1.0/jstag"><\/scr'+'ipt>');
 					</script>
-					<noscript><iframe id="cdee18542e" name="cdee18542e" src="http://ox-d.oncampusweb.com/w/1.0/afr?auid=537102484&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="234" height="60"><a href="http://ox-d.oncampusweb.com/w/1.0/rc?cs=cdee18542e&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.oncampusweb.com/w/1.0/ai?auid=537102484&cs=cdee18542e&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
+					<noscript><iframe id="9588c066a9" name="9588c066a9" src="http://ox-d.oncampusweb.com/w/1.0/afr?auid=537108126&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="240" height="90"><a href="http://ox-d.oncampusweb.com/w/1.0/rc?cs=9588c066a9&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.oncampusweb.com/w/1.0/ai?auid=537108126&cs=9588c066a9&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
 
 				</div>
 
