@@ -6,35 +6,21 @@ $postID = '1';
 if(isset($_GET['id'])){
    $postID =  preg_replace("/[^a-zA-Z0-9\_]/","", $_GET['id']);
    $url = get_article_url($postID);
-   header('location: '.$url);
-   exit;
 }elseif(isset($_GET['postID'])){
     $postID =  preg_replace("/[^a-zA-Z0-9\_]/","", $_GET['postID']);
     $url = get_article_url($postID);
-    header('location: '.$url);
-    exit;
 }elseif(isset($_GET['url_string'])){
     $postID = get_article_id($_GET['url_string']);
 }
 if($postID==''){
 	header('HTTP/1.0 404 Not Found');
-	exit;
 }
 
-//fetch article, set up title @Nook moved this here because we need it in the header
-                $cxn = get_database_cxn();
+      //fetch article, set up title @Nook moved this here because we need it in the header
+      $cxn = get_database_cxn();
 
-				$cacheName .= 'articleCache';
-				$cacheName .= strval($postID);
-
-	if($article= apc_fetch($cacheName)){
-
-	}else{
-
-		$postsQ = mysqli_query($cxn, "SELECT * FROM `wp_posts` WHERE `ID`='$postID' LIMIT 1");
-			$article = mysqli_fetch_array($postsQ);
-			apc_add($cacheName,$article,2000);
-	}
+	$postsQ = mysqli_query($cxn, "SELECT * FROM `wp_posts` WHERE `ID`='$postID' LIMIT 1");
+	$article = mysqli_fetch_array($postsQ);
 
 	$title = htmlspecialchars_decode(htmlentities($article['post_title'], ENT_QUOTES, 'cp1252'));
 
@@ -48,7 +34,9 @@ if($postID==''){
 	<title>
 	 The Dartmouth - <?= $title ?>
 	</title>
-	<?php include("includes/htmlhead.php"); ?>
+	<?php include("../includes/htmlhead.php");?>
+      <link href="includes/green_key.css" rel="stylesheet">
+
 
   </head>
   <body>
@@ -61,7 +49,7 @@ if($postID==''){
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 		<!-- navs -->
-  		<?php include("includes/navs.php"); ?>
+  		<?php include("includes/nav.php"); ?>
 
 
 		<div class="content container-fluid">
@@ -236,7 +224,6 @@ if($postID==''){
 
 				<!--</div>-->
 				<div class="span3" id="rightcol">
-                                                        <?php include("includes/topstories.php"); ?>
 
                                                         <div class="ad">
                                                             <!-- Right Square Box -->
@@ -289,7 +276,7 @@ if($postID==''){
 		<div class="row">
 			<div id="footer">
 
-				<?php include("includes/footer.php"); ?></div>
+				<?php include("../includes/footer.php"); ?></div>
 		</div>
 
   </body>
