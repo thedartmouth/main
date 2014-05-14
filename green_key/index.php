@@ -23,7 +23,7 @@
     </div>
 
     <h1>TITLE</h1>
-    <h2>SUBHEADING</h2>
+    <h2><br>SUBHEADING</h2>
 
   </body>
 
