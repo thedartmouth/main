@@ -9,3 +9,38 @@ body {
     -o-background-size: cover;
      background-size: cover;
 }
+.container{
+	margin-top: auto;
+}
+.brand{
+	width:130px;
+}
+
+.active{
+	margin-top:5px;
+}
+
+.dropdown{
+	margin-top: 5px;
+}
+
+.dropdown-toggle li:hover ul {
+	display: block;
+	position: absolute;
+	margin: 0;
+	padding: 0; }
+.dropdown-toggle li:hover li {
+	float: none; }
+
+h1 {
+	text-align: center;
+	font-size: 100px;
+	margin-top:50px;
+	font-family: Georgia;
+}
+
+h2 {
+	text-align: center;
+	font-size: 30px;
+	font-family: Georgia;
+}
