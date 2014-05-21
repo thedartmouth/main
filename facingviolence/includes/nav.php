@@ -21,7 +21,7 @@
                         <ul class="dropdown-menu">
                           <?php
                               $news = getCategory(1666,15);
-                              foreach($news as $article) {
+                              foreach(array_slice($news,1) as $article) {
                                 ?>
 
                                 <li><a href="/facingviolence/article.php?id=<?=$article['id']?>"><?= $article['title']?></a></li>
@@ -35,7 +35,7 @@
                         <ul class="dropdown-menu">
                             <?php
                               $features = getCategory(1664,15);
-                              foreach($features as $article) {
+                              foreach(array_slice($features,1)  as $article) {
                                 ?>
 
                                 <li><a href="/facingviolence/article.php?id=<?=$article['id']?>"><?= $article['title']?></a></li>
@@ -48,8 +48,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opinion <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <?php
-                              $opinions = getCategory(1667,15);
-                              foreach($opinions as $article) {
+                              $opinions = getCategory(1669,15);
+                              foreach(array_slice($opinions,1)  as $article) {
                                 ?>
 
                                 <li><a href="/facingviolence/article.php?id=<?=$article['id']?>"><?= $article['title']?></a></li>

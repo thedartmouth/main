@@ -4,13 +4,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="blitz" content="mu-888cf5c6-e0ed7357-64cc0734-6f33dfe6"/>
-  <title>The Dartmouth - Green Key Special</title>
+  <title>The Dartmouth - A Campus Facing Violence</title>
   <?php include("../includes/htmlhead.php");
 
     include("../included.php");
 
     ?>
-    <link href="includes/facingviolence.css" rel="stylesheet">
+    <link href="../css/facingviolence.css" rel="stylesheet">
 
 
   </head>

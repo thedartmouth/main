@@ -20,9 +20,23 @@ if($postID==''){
       $cxn = get_database_cxn();
 
 	$postsQ = mysqli_query($cxn, "SELECT * FROM `wp_posts` WHERE `ID`='$postID' LIMIT 1");
-	$article = mysqli_fetch_array($postsQ);
+	$article = mysqli_fetch_array($postsQ, MYSQLI_ASSOC);
 
 	$title = htmlspecialchars_decode(htmlentities($article['post_title'], ENT_QUOTES, 'cp1252'));
+
+      $dateInt = strtotime($article['post_date']);
+      $date = date("F j, Y", $dateInt);
+
+      $content = htmlspecialchars_decode(htmlentities($article['post_content'], ENT_QUOTES, 'cp1252'));
+      $content = str_replace("\n", "<br/>", $content);
+      $count = $article['viewcount']; //  this is a custom field we added
+      $summary = $article['post_excerpt'];
+      $summary = htmlspecialchars_decode(htmlentities($summary, ENT_QUOTES, 'cp1252'));
+      $count ++;
+
+      $content = str_replace("&trade;", "'", $content);
+      $content = str_replace("&oelig;", "'", $content);
+      $content = str_replace("&acirc;&euro;", "'", $content);
 
 
 ?>
@@ -32,10 +46,12 @@ if($postID==''){
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <base href="<?php print DIR_WS_ROOT; ?>" target="_self" />
 	<title>
-	 The Dartmouth - <?= $title ?>
+	 A Campus Facing Violence - <?= $title ?>
 	</title>
 	<?php include("../includes/htmlhead.php");?>
-      <link href="includes/facingviolence.css" rel="stylesheet">
+      <link href="../css/facingviolence.css" rel="stylesheet">
+      <link href="../css/facingviolence-article.css" rel="stylesheet">
+
 
 
   </head>
@@ -77,26 +93,6 @@ if($postID==''){
 			<div class="row-fluid">
 				<div class="span9" id="staticcontent">
 				<?php
-
-				// Selects given post ID from wp_posts
-                //                $cxn = get_database_cxn();
-			//	$postsQ = mysqli_query($cxn, "SELECT * FROM `wp_posts` WHERE `ID`='$postID' LIMIT 1");
-
-			//		$article = mysqli_fetch_array($postsQ);
-			//		$title = htmlspecialchars_decode(htmlentities($article['post_title'], ENT_QUOTES, 'cp1252'));
-					$content = htmlspecialchars_decode(htmlentities($article['post_content'], ENT_QUOTES, 'cp1252'));
-						$content = str_replace("\n", "<br/>", $content);
-					$count = $article['viewcount']; //  this is a custom field we added
-					$summary = $article['post_excerpt'];
-						$summary = htmlspecialchars_decode(htmlentities($summary, ENT_QUOTES, 'cp1252'));
-					$count ++;
-
-					$content = str_replace("&trade;", "'", $content);
-					$content = str_replace("&oelig;", "'", $content);
-					$content = str_replace("&acirc;&euro;", "'", $content);
-
-					$dateInt = strtotime($article['post_date']);
-					$date = date("F j, Y", $dateInt);
 
 					// new author code
 

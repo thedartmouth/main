@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    background: url("../facingviolence.jpg") no-repeat center center fixed;
+    background: url("../facingviolence/facingviolence.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -22,7 +22,7 @@ body {
 }
 
 .brand{
-	width:130px;
+	max-width: 130px;
 }
 
 .active{

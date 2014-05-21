@@ -44,10 +44,10 @@
                 <div class="span6" id="grad-form">
                     <h3 id="step1-header">
                         <span id="step1-header" class="pull-left">
-                            1. Send us your message
+                            1. Save your message
                         </span>
                         <span id="step2-header" class="grey pull-right">
-                            2. Submit payment
+                            2. Submit photo and payment
                         </span>
                     </h3>
                     <div id="step1">
@@ -75,12 +75,6 @@
                                 <label class="control-label" for="message">Message (35-40 words)<br><span id="remaining">40</span> words remaining</label>
                                 <div class="controls">
                                     <textarea rows="3" id="message" name="message" placeholder="Enter message here." required></textarea>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="image">Attach an Image</label>
-                                <div class="controls">
-                                    <input type="file" id="image" name="image" accept="image/jpg" required>
                                 </div>
                             </div>
                             <div class="control-group">

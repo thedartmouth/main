@@ -12,12 +12,12 @@ while(file_exists($uploadFilename = $_POST['billingName'] .' for '.$_POST['stude
     $now++;
 }
 
-// Upload image to dropbox
-$dbxClient = new \Dropbox\Client(DROPBOX_TOKEN, "PHP-Example/1.0");
-$f = fopen($_FILES['image']['tmp_name'], "rb");
-$result = $dbxClient->uploadFile("/$uploadFilename", \Dropbox\WriteMode::add(), $f);
-fclose($f);
-$imageURL = $dbxClient->createShareableLink($result['path']);
+// // Upload image to dropbox
+// $dbxClient = new \Dropbox\Client(DROPBOX_TOKEN, "PHP-Example/1.0");
+// $f = fopen($_FILES['image']['tmp_name'], "rb");
+// $result = $dbxClient->uploadFile("/$uploadFilename", \Dropbox\WriteMode::add(), $f);
+// fclose($f);
+// $imageURL = $dbxClient->createShareableLink($result['path']);
 
 // Add new row to spreadsheet
 // Zend library include path
@@ -36,7 +36,7 @@ $row = array
     , "Your Email" => $_POST['billingEmail']
     , "Student's Name" => $_POST['studentName']
     , "Message" => $_POST['message']
-    , "Image" => $imageURL
+    , "Image" => "SEE EMAIL"
 );
 
 $ss->addRow($row);
@@ -54,16 +54,16 @@ $headers = "From: thedartmouth@gmail.com\r\nReply-To: thedartmouth@gmail.com";
 //add boundary string and mime type specification
 $headers .= "\r\nContent-Type: multipart/mixed; boundary=\"PHP-mixed-".$random_hash."\"";
 //define the body of the message.
-$message = $_POST['message'] . "\n\n\n\n". $imageURL;
+$message = $_POST['message'] . "\n\n\n\n". "SEE EMAIL";
 
 //send the email
 $mail_sent = @mail( $to, $subject, $message, $headers );
 
-echo "<h3>Your ad has been submitted, but we must receive payment to publish.<h3>
+echo "<br/><h3>Your ad has been submitted, but we must receive payment and a photo to publish.<h3><br/><p>Please email us the image you would like to attach<br/><a href='mailto:graduation@thedartmouth.com?subject=$uploadFilename'><u>here</u></a>.</p><br/><br/><br/>
                         <form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
                             <input type='hidden' name='cmd' value='_s-xclick'>
                             <input type='hidden' name='hosted_button_id' value='BCEG5U8597FSG'>
-                            <input type='image' src='https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif' border='0' name='submit' alt='PayPal - The safer, easier way to pay online!''>
+                            <input type='image' src='https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif' border='0' name='submit' alt='PayPal - The safer, easier way to pay online!'>
                             <img alt='' border='0' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1' height='1'>
-                        </form>"
+                        </form>";
 ?>
