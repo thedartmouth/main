@@ -47,7 +47,7 @@ $catID = 5;
 
 						include("included.php");
 
-						$cat = getCategoryCached($catID,14);
+						$cat = getCategoryCached($catID,19);
 						$current = $cat['feature'];
 						if ($current == null) {
 							$current = $cat[0];
