@@ -81,7 +81,10 @@ function show_results(){
         var cxs = '#'+results_container_id+' input.hidden_result:first-child';
         var new_id = $('#'+results_container_id+' input.hidden_result').first().attr('id');
         $('#'+new_id).remove();
-        show_single_result(new_id);
+
+        if (new_id) {
+            show_single_result(new_id);
+        }
     }
     $('#'+loading_id).hide();
     if($('#'+results_container_id+' input.hidden_result.unprocessed').length > 0){
@@ -92,7 +95,6 @@ function show_results(){
 
 // Show a single result
 function show_single_result(article_id){
-    console.log('entered');
     // Submit Query
     var parameters = 'id='+article_id+'&randkey='+new Date().getTime();
     $.getJSON("search/get_article_preview.php",parameters,
@@ -105,12 +107,6 @@ function show_single_result(article_id){
             var date = ajax_response.response.data.date;
             var url = ajax_response.response.data.url;
             var article_id = ajax_response.response.data.id;
-
-            if (article_id == "") {
-                console.log('Error getting article preview');
-                return;
-            }
-
             $('#'+results_container_id).append('<div class="result_item" id="article_id_'+article_id+'"><div class="date">'+date+'</div><div class="headline"><a class="url" href="'+url+'">'+headline+'</a></div><div class="content"><div class="authors">By: </div><div>'+content+'...</div></div></div>');
             $.each(authors, function(key, value) {
                 var author_name = value.name;
