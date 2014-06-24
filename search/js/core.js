@@ -105,6 +105,12 @@ function show_single_result(article_id){
             var date = ajax_response.response.data.date;
             var url = ajax_response.response.data.url;
             var article_id = ajax_response.response.data.id;
+
+            if (article_id == "") {
+                console.log('Error getting article preview');
+                return;
+            }
+
             $('#'+results_container_id).append('<div class="result_item" id="article_id_'+article_id+'"><div class="date">'+date+'</div><div class="headline"><a class="url" href="'+url+'">'+headline+'</a></div><div class="content"><div class="authors">By: </div><div>'+content+'...</div></div></div>');
             $.each(authors, function(key, value) {
                 var author_name = value.name;
