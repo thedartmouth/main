@@ -1,8 +1,9 @@
 <div class="row-fluid brand">
-    <div class="span7">
+    <div class="span2"></div>
+    <div class="span4">
         <div class="logo"> <a href="index.php"><img src="/logo.png" /></a></div>
     </div>
-    <div class="span5">
+    <div class="span4">
 
         <div class="ad">
             <!--/* OpenX JavaScript tag */-->
@@ -25,8 +26,18 @@
             <noscript><iframe id="4cd041b13e" name="4cd041b13e" src="http://ox-d.oncampusweb.com/w/1.0/afr?auid=537112973&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="240" height="90"><a href="http://ox-d.oncampusweb.com/w/1.0/rc?cs=4cd041b13e&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.oncampusweb.com/w/1.0/ai?auid=537112973&cs=4cd041b13e&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
         </div>
 
-        <div class="social">
 
+        <div class="about">
+            <ul class="about-top-nav">
+                <li><a href="/about">About</a></li>
+                <li><a href="/advertise">Advertise</a></li>
+                <li><a href="/subscribe">Subscribe</a></li>
+                <li><a href="http://thedartmouth.us4.list-manage2.com/subscribe?u=946d04da6b4c5e2ccab9bcf78&id=06f42def36">eSubscribe</a></li>
+                <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=X3DCF7HWRVKAY" target="_blank">Donate</a></li>
+            </ul>
+        </div>
+
+        <div class="social">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Follow us!<b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -39,4 +50,5 @@
             </li>
         </div>
     </div>
+    <div class="span2"></div>
 </div>

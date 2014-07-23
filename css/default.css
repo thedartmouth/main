@@ -14,6 +14,7 @@ body {
 .content {
 	max-width: 1090px;
 	margin: 0 auto;
+	padding-top: 10px;
 }
 
 a, a:hover, a:visited {
@@ -168,6 +169,7 @@ h5 {
 
 .social {
 	margin: 10px;
+	text-align: center;
 }
 
 #nav {
@@ -242,19 +244,43 @@ h5 {
 
 }
 
-.about-nav {
+.about {
 	margin: 0px;
 	display: inline;
+	text-align: center;
 }
 
-.about-nav li {
+.about li {
 	text-align: center;
 	border-left: 1px #999 solid;
 	margin: 4px 0;
 	padding: 0 10px 0 12px;
 }
 
-.about-nav form {
+.about li:last-child {
+	text-align: center;
+	border-right: 1px #999 solid;
+	margin: 4px 0;
+	padding: 0 10px 0 12px;
+}
+
+.about-nav li {
+	display: block;
+}
+
+.about-footer-nav {
+	margin: 0px;
+	display: inline;
+}
+
+.about-footer-nav li {
+	text-align: center;
+	border-left: 1px #999 solid;
+	margin: 4px 0;
+	padding: 0 10px 0 12px;
+}
+
+.about-footer-navform {
 	margin: 0;
 }
 
