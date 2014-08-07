@@ -238,48 +238,50 @@ if($postID==''){
 				<div class="span3" id="rightcol">
                                                         <?php include("includes/topstories.php"); ?>
 
-                                                        <div class="ad">
-                                                            <!-- Right Square Box -->
-                                                            <!--/* OpenX JavaScript tag */-->
+                                                        <div class="article-ads">
+                                                            <div class="ad">
+                                                              <!-- Right Square Box -->
+                                                              <!--/* OpenX JavaScript tag */-->
 
-                                                            <!-- /*
-                                                             * The tag in this template has been generated for use on a
-                                                             * non-SSL page. If this tag is to be placed on an SSL page, change the
-                                                             * 'http://ox-d.oncampusweb.com/...'
-                                                             * to
-                                                             * 'https://ox-d.oncampusweb.com/...'
-                                                             */ -->
+                                                              <!-- /*
+                                                               * The tag in this template has been generated for use on a
+                                                               * non-SSL page. If this tag is to be placed on an SSL page, change the
+                                                               * 'http://ox-d.oncampusweb.com/...'
+                                                               * to
+                                                               * 'https://ox-d.oncampusweb.com/...'
+                                                               */ -->
 
-                                                            <script type="text/javascript">
-                                                            if (!window.OX_ads) { OX_ads = []; }
-                                                            OX_ads.push({ "auid" : "537085606" });
-                                                            </script>
-                                                            <script type="text/javascript">
-                                                            document.write('<scr'+'ipt src="http://ox-d.oncampusweb.com/w/1.0/jstag"><\/scr'+'ipt>');
-                                                            </script>
-                                                            <noscript><iframe id="d66a14328a" name="d66a14328a" src="http://ox-d.oncampusweb.com/w/1.0/afr?auid=537085606&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="250" height="250"><a href="http://ox-d.oncampusweb.com/w/1.0/rc?cs=d66a14328a&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.oncampusweb.com/w/1.0/ai?auid=537085606&cs=d66a14328a&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
-                                                        </div>
+                                                              <script type="text/javascript">
+                                                              if (!window.OX_ads) { OX_ads = []; }
+                                                              OX_ads.push({ "auid" : "537085606" });
+                                                              </script>
+                                                              <script type="text/javascript">
+                                                              document.write('<scr'+'ipt src="http://ox-d.oncampusweb.com/w/1.0/jstag"><\/scr'+'ipt>');
+                                                              </script>
+                                                              <noscript><iframe id="61caa23f6d" name="61caa23f6d" src="http://ox-d.oncampusweb.com/w/1.0/afr?auid=537085606&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="250" height="250"><a href="http://ox-d.oncampusweb.com/w/1.0/rc?cs=61caa23f6d&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.oncampusweb.com/w/1.0/ai?auid=537085606&cs=61caa23f6d&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
+                                                          </div>
 
-                                                        <div class="ad">
-                                                            <!-- WideSkyscraperSection -->
-                                                            <!--/* OpenX JavaScript tag */-->
+                                                          <div class="ad">
+                                                              <!-- WideSkyscraperSection -->
+                                                              <!--/* OpenX JavaScript tag */-->
 
-                                                            <!-- /*
-                                                             * The tag in this template has been generated for use on a
-                                                             * non-SSL page. If this tag is to be placed on an SSL page, change the
-                                                             * 'http://ox-d.oncampusweb.com/...'
-                                                             * to
-                                                             * 'https://ox-d.oncampusweb.com/...'
-                                                             */ -->
+                                                              <!-- /*
+                                                               * The tag in this template has been generated for use on a
+                                                               * non-SSL page. If this tag is to be placed on an SSL page, change the
+                                                               * 'http://ox-d.oncampusweb.com/...'
+                                                               * to
+                                                               * 'https://ox-d.oncampusweb.com/...'
+                                                               */ -->
 
-                                                            <script type="text/javascript">
-                                                            if (!window.OX_ads) { OX_ads = []; }
-                                                            OX_ads.push({ "auid" : "536871731" });
-                                                            </script>
-                                                            <script type="text/javascript">
-                                                            document.write('<scr'+'ipt src="http://ox-d.oncampusweb.com/w/1.0/jstag"><\/scr'+'ipt>');
-                                                            </script>
-                                                            <noscript><iframe id="139a109648" name="139a109648" src="http://ox-d.oncampusweb.com/w/1.0/afr?auid=536871731&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="160" height="600"><a href="http://ox-d.oncampusweb.com/w/1.0/rc?cs=139a109648&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.oncampusweb.com/w/1.0/ai?auid=536871731&cs=139a109648&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
+                                                              <script type="text/javascript">
+                                                              if (!window.OX_ads) { OX_ads = []; }
+                                                              OX_ads.push({ "auid" : "536871731" });
+                                                              </script>
+                                                              <script type="text/javascript">
+                                                              document.write('<scr'+'ipt src="http://ox-d.oncampusweb.com/w/1.0/jstag"><\/scr'+'ipt>');
+                                                              </script>
+                                                              <noscript><iframe id="139a109648" name="139a109648" src="http://ox-d.oncampusweb.com/w/1.0/afr?auid=536871731&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="160" height="600"><a href="http://ox-d.oncampusweb.com/w/1.0/rc?cs=139a109648&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.oncampusweb.com/w/1.0/ai?auid=536871731&cs=139a109648&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
+                                                          </div>
                                                         </div>
                                                     </div>
 			</div>
