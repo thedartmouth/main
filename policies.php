@@ -34,6 +34,10 @@
 						<p>The best way to contact The Dartmouth about any of these issues is to e-mail <a href="mailto:editor@thedartmouth.com">editor@thedartmouth.com</a>.</p>
 					</br>
 
+					<h1>Ethics Policy</h1>
+						<p>For our editorial ethics code, click <a href="/the-dartmouth-ethics-code.pdf">here</a>.</p>
+					</br>
+
 					<h1>Privacy Policy</h1>
 					<h3>Information Collection</h3>
 				<p>TheDartmouth.com collects only two types of information from you when you visit this website. The first is the standard information that your browser provides to all websites you visit, including your internet IP address, the IP address of your service provider, the date and time of your visit and sometimes what type of browser you are using. TheDartmouth.com compiles anonymous usage statistics (i.e. to find out how many visitors we get per day) using this information. The Dartmouth Online cannot determine your actual identity through this information, nor would we if it was possible. Our individual access logs are not shared with any person or organization outside of The Dartmouth.</p>
