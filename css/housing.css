@@ -1,0 +1,375 @@
+
+
+html, body {
+    height:100%;
+}
+
+body {
+    background: url("../housing/img/sky-background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+.container{
+    margin-top: auto;
+}
+
+.page-content {
+    color: white;
+}
+
+.header {
+    padding-top: 30px;
+}
+
+.header h1 {
+    font-family: 'Roboto Slab','Georgia',serif;
+    font-size: 7em;
+    line-height: 1em;
+}
+
+.header h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2em;
+}
+
+.line {
+    border-top: solid 3px;
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.navbar-inverse {
+    color: white;
+}
+
+.navbar-inverse .nav>li>a {
+    color: white;
+}
+
+.navbar .nav>li {
+    margin-top: 5px;
+}
+
+.housing_nav{
+      padding: 0 50px;
+}
+
+.navbar-inner {
+  border: none;
+}
+
+.brand{
+  max-width: 130px;
+}
+
+.active{
+  margin-top:5px;
+  font-family: News Gothic;
+}
+
+.dropdown{
+  margin-top: 5px;
+  font-family: News Gothic;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+}
+
+.tab-window {
+  background: rgba(0,0,0,0.5);
+
+  min-height: 600px;
+  float: left;
+  max-width: 570px;
+  margin-top: -20px;
+  padding-left: 20px;
+  padding-top: 30px;
+}
+
+.tab-window h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 4em;
+    line-height: 1.5em;
+}
+
+.tab-window p {
+    padding-left: 50px;
+    padding-right: 20px;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.author {
+  padding-top: 10px;
+}
+
+.tab-nav {
+  padding-bottom: 5px;
+}
+
+.tab-nav a {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.tab-nav li {
+  padding-right: 20px;
+  color: bisque;
+}
+
+.tab-nav li:hover a {
+  border-bottom: 3px solid bisque;
+}
+
+.tab-nav li.active a {
+  border-bottom: 3px solid bisque;
+}
+
+.tab-pane {
+  overflow: auto;
+  max-height: 400px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.distances {
+  text-align: center;
+  width: 400px;
+}
+
+.distance {
+  float: left;
+  min-height: 60px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.distance div:first-child {
+  font-size: 30px;
+  line-height: 30px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.map {
+    background: url("../housing/img/map-base.png") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: 150%;
+     height: 500px;
+}
+
+.map div {
+  display: inline-block;
+}
+
+.cluster-page {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+     height: 92%;
+}
+
+.choates {
+    background: url("../housing/img/choates.png") no-repeat center center fixed;
+}
+
+.ew {
+    background: url("../housing/img/east-wheelock.png") no-repeat center center fixed;
+}
+
+.river {
+    background: url("../housing/img/river.png") no-repeat center center fixed;
+}
+
+.fahey-mclane {
+    background: url("../housing/img/fahey-mclane.png") no-repeat center center fixed;
+}
+
+.russellsage-butterfield {
+    background: url("../housing/img/russelsage-butterfield.png") no-repeat center center fixed;
+}
+
+.mclaughlin {
+    background: url("../housing/img/mclaughlin.png") no-repeat center center fixed;
+}
+
+@media (min-width: 980px) {
+  .page-content {
+    padding-top: 60px;
+  }
+}
+
+/********************************
+* SPRITE ICONS FOR HOMEPAGE
+********************************/
+.RusselSage-Butterfield-Icon, .Fahey-McLane-Icon, .Choates-Icon, .River-Icon, .McLaughlin-Icon, .EastWheelock-Icon, .BakerBerry-Icon, .Pathlines{
+  background: url("../housing/img/sprites.png") no-repeat center;
+}
+
+.RusselSage-Butterfield-Icon{
+  background-position: 0 0;
+  width: 188px;
+  height: 129px;
+
+  position: absolute;
+  left: 20%;
+  top: 53%;
+}
+
+.RusselSage-Butterfield-Icon:hover{
+  background-position: 0 -146px ;
+}
+
+.Fahey-McLane-Icon{
+  background-position: -209px 0;
+  width: 195px;
+  height: 101px;
+
+  position: absolute;
+  left: 5%;
+  top: 50%;
+}
+
+.Fahey-McLane-Icon:hover{
+  background-position: -213px -136px ;
+}
+
+.Choates-Icon{
+  background-position: -437px 0;
+  width: 248px;
+  height: 144px;
+
+  position: absolute;
+  left: 25%;
+  top: 35%;
+}
+
+.Choates-Icon:hover{
+  background-position: -441px -167px ;
+}
+
+.River-Icon{
+  background-position: -728px 0;
+  width: 250px;
+  height: 135px;
+
+  position: absolute;
+  top: 65%;
+  left: 10%;
+}
+
+.River-Icon:hover{
+  background-position: -727px -168px ;
+}
+
+.McLaughlin-Icon{
+  background-position: 0 -321px ;
+  width: 248px;
+  height: 140px;
+
+  position: absolute;
+  left: 70%;
+  top: 35%;
+}
+
+.McLaughlin-Icon:hover{
+  background-position: 0 -498px ;
+}
+
+.EastWheelock-Icon{
+  background-position: -297px -329px ;
+  width: 264px;
+  height: 170px;
+
+  position: absolute;
+  left: 80%;
+  top: 60%;
+}
+
+.EastWheelock-Icon:hover{
+  background-position: -303px -509px ;
+}
+
+.BakerBerry-Icon{
+  background-position: -639px -351px ;
+  width: 338px;
+  height: 275px;
+
+  position: absolute;
+  left: 40%;
+  top: 35%;
+}
+
+.Pathlines{
+  background-position: -1032.9744262695312px -30.9954833984375px ;
+  width: 1565px;
+  height: 800px;
+
+  position: absolute;
+  left: -10%;
+  top: 10%;
+}
+
+@media (max-width: 1060px) {
+  .map div {
+    display: block;
+  }
+
+  .cluster {
+    position: static;
+  }
+
+  .BakerBerry-Icon {
+    background: none;
+  }
+
+  .map {
+    background: none;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .header h1 {
+    font-size: 4em;
+  }
+
+  .header h2 {
+    font-size: 1.5em;
+  }
+
+  .navbar-fixed-bottom {
+    position: fixed;
+  }
+}
+
+@media (max-width: 979px) {
+  .tab-window {
+    min-height: 450px;
+  }
+
+  .cluster-page {
+    height: 88%;
+  }
+}
+
+@media (max-width: 420px) {
+  .cluster-page {
+    height: 100%;
+  }
+}

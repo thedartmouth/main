@@ -13,7 +13,15 @@ function getCategory($catID, $lim){
 	$cxn = get_database_cxn();
 	// Selects most recent post IDs from wp_term_relationships table, from category specified with limits specified
 
-	$postIDsQ=mysqli_query($cxn, "SELECT DISTINCT ID FROM wp_posts LEFT JOIN wp_term_relationships ON wp_posts.ID = wp_term_relationships.object_id WHERE wp_term_relationships.term_taxonomy_id = '$catID' AND `post_status`='publish' ORDER BY `post_date` DESC LIMIT $lim");
+	$postIDsQ=mysqli_query($cxn, "SELECT ID
+						FROM wp_posts
+						INNER JOIN
+							wp_term_relationships
+						ON 	wp_posts.ID = wp_term_relationships.object_id
+						WHERE 	wp_term_relationships.term_taxonomy_id IN ('$catID')
+							AND wp_posts.post_status = 'publish'
+						ORDER BY `post_date`DESC
+						LIMIT $lim");
 
 
 	#$postIDsQ = mysqli_query($cxn, "SELECT DISTINCT `object_id` FROM `wp_term_relationships` WHERE `term_taxonomy_id` = '$catID' ORDER BY `object_id` DESC LIMIT $lim");

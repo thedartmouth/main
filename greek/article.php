@@ -46,12 +46,12 @@ if($postID==''){
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <base href="<?php print DIR_WS_ROOT; ?>" target="_self" />
 	<title>
-	 A Campus Facing Violence - <?= $title ?>
+	 Lest Old Traditions Fail - <?= $title ?>
 	</title>
 	<?php include("../includes/htmlhead.php");?>
       <link href="../css/special.css" rel="stylesheet">
       <link href="../css/special-article.css" rel="stylesheet">
-      <link href="../css/facingviolence.css" rel="stylesheet">
+      <link href="../css/greek.css" rel="stylesheet">
 
 
   </head>

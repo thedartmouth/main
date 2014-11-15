@@ -240,7 +240,6 @@ if($postID==''){
 
                                                         <div class="article-ads">
                                                             <div class="ad">
-                                                              <!-- Right Square Box -->
                                                               <!--/* OpenX JavaScript tag */-->
 
                                                               <!-- /*
@@ -258,7 +257,7 @@ if($postID==''){
                                                               <script type="text/javascript">
                                                               document.write('<scr'+'ipt src="http://ox-d.oncampusweb.com/w/1.0/jstag"><\/scr'+'ipt>');
                                                               </script>
-                                                              <noscript><iframe id="61caa23f6d" name="61caa23f6d" src="http://ox-d.oncampusweb.com/w/1.0/afr?auid=537085606&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="250" height="250"><a href="http://ox-d.oncampusweb.com/w/1.0/rc?cs=61caa23f6d&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.oncampusweb.com/w/1.0/ai?auid=537085606&cs=61caa23f6d&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
+                                                              <noscript><iframe id="fc5de101d0" name="fc5de101d0" src="http://ox-d.oncampusweb.com/w/1.0/afr?auid=537085606&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="250" height="250"><a href="http://ox-d.oncampusweb.com/w/1.0/rc?cs=fc5de101d0&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ox-d.oncampusweb.com/w/1.0/ai?auid=537085606&cs=fc5de101d0&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>
                                                           </div>
 
                                                           <div class="ad">

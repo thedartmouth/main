@@ -1,0 +1,77 @@
+.container{
+	margin-top: auto;
+}
+
+.special_nav{
+      padding: 0 50px;
+}
+
+.navbar-inner {
+  border: none;
+}
+
+.brand{
+	max-width: 130px;
+}
+
+.home{
+	margin-top:5px;
+  font-family: News Gothic;
+}
+
+.dropdown{
+	margin-top: 5px;
+  font-family: News Gothic;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+}
+
+.index-text {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.2)), color-stop(.5,#333333));
+
+  /* mozilla example - FF3.6+ */
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0.2) 95%);
+
+  /* approximately a 33% opacity on blue */
+  filter: progid:DXImageTransform.Microsoft.gradient(
+    startColorstr=#550000FF, endColorstr=#550000FF
+  );
+
+  /* IE8 uses -ms-filter for whatever reason... */
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(
+    startColorstr=#550000FF, endColorstr=#550000FF
+  );
+
+  margin-top: -20px;
+  padding-left: 20px;
+  padding-top: 30px;
+}
+
+.heading {
+	text-align: left;
+	font-size: 72px;
+	font-family: Adobe Caslon Semibold;
+      line-height: 5rem;
+      color: #F1E3E3;
+}
+
+.subheading {
+	text-align: left;
+	font-size: 30px;
+	font-family: Adobe Caslon Semibold;
+      line-height: 2rem;
+      color: #F1E3E3;
+}
+
+.twitter {
+  padding-top: 50px;
+}
+
+@media (min-width: 980px) {
+  body {
+    padding-top: 60px;
+    padding-bottom: 42px;
+  }
+}

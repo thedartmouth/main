@@ -45,15 +45,12 @@
 								</center></td>
 							</tr>
 							<tr>
-								<td align="center" valign="top" colspan="3" style="position: relative; left: -20px;"><center><p><strong>Taylor Malmsheimer</strong><br>
-								Day Managing Editor</center></td>
-							</tr>
-							<tr>
-								<td align="right"  valign="top"><p><strong>Madison Pauly</strong><br>
-								Evening Managing Editor</p></td>
-								<td width="20"></td>
-								<td align="left"  valign="top"><p><strong>Sasha Dudding</strong><br>
-								Evening Managing Editor</p></td>
+								<td align="center" valign="top" colspan="3" style="position: relative; left: -20px;"><center><p><strong>
+									Sasha Dudding<br/>
+									Taylor Malmsheimer<br/>
+									Madison Pauly
+								</strong><br>
+								Managing Editors</center></td>
 							</tr>
 							<tr>
 								<td align="right" valign="top">&nbsp;</td>
@@ -61,25 +58,27 @@
 								<td align="left"  valign="top">&nbsp;</td>
 							</tr>
 							<tr>
-								<td align="right" valign="top"><p><strong>Katie McKay</strong><br />
-									Opinion Editor</p>
-								<p><strong>Brett Drucker<br />
+								<td align="right" valign="top"><p><strong>Emily Albrecht<br />
+									Lulu Chang</strong><br />
+									Opinion Editors</p>
+								<p><strong>Joe Clyne<br />
 									Blaze Joel
 								</strong><br />
 									Sports Editors</p>
 								<p><strong>Caela Murphy</strong><br>
 									<strong>Ashley Ulrich</strong><br>
 									Arts &amp; Entertainment Editors</p>
-								<p><strong>Emma Moley</strong><br />
-									<strong>Jasmine Sachar</strong><br>
-								Mirror Editors</p>
+								<p><strong>Erin Landau</strong><br />
+								Mirror Editor</p>
 								<p><strong>
 									Aditi Kirtikar<br />
-									Jessica Zischke
+									Emma Moley
 								</strong><br>
 									Dartbeat Editors</p>
 								<p><strong>Tracy Wang</strong></br>
 									</strong>Photography Editor</p>
+								<p><strong>Natalie Cantave</strong></br>
+									</strong>Assistant Photography Editor</p>
 								<p><strong>Alex Becker
 								</strong><br>
 									Multimedia Editor</p></td>

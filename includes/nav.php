@@ -11,6 +11,19 @@ function echoActiveClassIfRequestMatches($requestUri)
 
 ?>
 
+<script>
+  (function() {
+    var cx = '013493263980530339291:ujvbczpbozc';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
 <div>
 	<div class="container-fluid">
 		<div class="collapse-nav">
@@ -34,12 +47,8 @@ function echoActiveClassIfRequestMatches($requestUri)
 				<li><a href="/mirror" <?=echoActiveClassIfRequestMatches("mirror")?>>Mirror</a></li>
 				<li><a href="/dartbeat" <?=echoActiveClassIfRequestMatches("dartbeat")?>>Dartbeat</a></li>
 				<li><a href="http://www.youtube.com/user/TheDartmouthVideo/" <?=echoActiveClassIfRequestMatches("media")?>>Media</a></li>
-				<li>
-					<form action="/search.php"  method="get" class="form-search">
-						<input type="text" name="search" class="input-medium search-query" />
-						<input type="hidden" name="order" value="rel" />
-						<button type="submit" class="btn">Search</button>
-					</form>
+				<li class="form-search">
+					<gcse:searchbox-only resultsUrl="/search.php" newWindow="false"></gcse:searchbox-only>
 				</li>
 			</ul>
 		</div>
