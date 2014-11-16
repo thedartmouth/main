@@ -20,7 +20,15 @@
 					<p>Since its founding in 1999 at <em>The Dartmouth</em>'s Bicentennial Gala, The Vox Clamantis Fund has distributed nearly $140,000 to enable our reporters and editors to supplement their "on-the-job" training by meeting and working with renowned practicing journalists.</p>
 					<p>As an independent organization, <em>The Dartmouth</em> does not receive funding from the College, and none of this would be possible without the Fund’s support. Maintaining and expanding these programs depends upon the support of our loyal alumni and friends.</p>
 					<p>We thank you in advance for your generosity and support of <em>The Dartmouth</em>.</p>
+					
+					<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_blank'>
+		                <input type='hidden' name='cmd' value='_s-xclick'>
+		                <input type='hidden' name='hosted_button_id' value='X3DCF7HWRVKAY'>
+		                <input type='image' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif' border='0' name='submit' alt='PayPal - The safer, easier way to pay online!'>
+		                <img alt='' border='0' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' width='1' height='1'>
+		            </form>
 				</div>
+
                 <?php include("includes/aboutnav.php"); ?>
 			</div>
 		</div>
