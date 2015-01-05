@@ -3,9 +3,9 @@
 /**
  * Disable error reporting
  *
- * Set this to error_reporting( E_ALL ) or error_reporting( E_ALL | E_STRICT ) for debugging
+ * Set this to error_reporting( -1 ) for debugging.
  */
-//error_reporting(0);
+error_reporting(0);
 
 /** Set ABSPATH for execution */
 define( 'ABSPATH', dirname(dirname(__FILE__)) . '/' );
@@ -119,7 +119,7 @@ if ( is_array( $load ) )
 	$load = implode( '', $load );
 
 $load = preg_replace( '/[^a-z0-9,_-]+/i', '', $load );
-$load = explode(',', $load);
+$load = array_unique( explode( ',', $load ) );
 
 if ( empty($load) )
 	exit;
@@ -128,8 +128,6 @@ require(ABSPATH . WPINC . '/script-loader.php');
 require(ABSPATH . WPINC . '/version.php');
 
 $compress = ( isset($_GET['c']) && $_GET['c'] );
-// Force compression off, to fix stylesheet bug
-$compress = false;
 $force_gzip = ( $compress && 'gzip' == $_GET['c'] );
 $expires_offset = 31536000; // 1 year
 $out = '';
@@ -148,7 +146,6 @@ foreach( $load as $handle ) {
 header('Content-Type: application/x-javascript; charset=UTF-8');
 header('Expires: ' . gmdate( "D, d M Y H:i:s", time() + $expires_offset ) . ' GMT');
 header("Cache-Control: public, max-age=$expires_offset");
-
 
 if ( $compress && ! ini_get('zlib.output_compression') && 'ob_gzhandler' != ini_get('output_handler') && isset($_SERVER['HTTP_ACCEPT_ENCODING']) ) {
 	header('Vary: Accept-Encoding'); // Handle proxies
