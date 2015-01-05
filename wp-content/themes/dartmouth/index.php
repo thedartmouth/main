@@ -192,11 +192,21 @@ get_header(); ?>
 				<div class="section-preview row">
 					<div class="col-md-6">
 						<h2 class="green"><a>Today's Paper</a></h2>
-						<div data-configid="7773244/10193502" style="width: 325px; height: 325px;" class="issuuembed"></div>
+						<div>
+						<?php 
+							$page = get_page_by_path('d-issuu-url');
+							echo apply_filters('the_content', $page->post_content);
+						?>
+						</div>
 					</div>
 					<div class="col-md-6">
 						<h2 class="green"><a>Insert</a></h2>
-						<div class="issuuembed" style="width: 325px; height: 325px;" data-configid="7773244/10176960"></div>
+						<div>
+						<?php 
+							$page = get_page_by_path('insert-issuu-url');
+							echo apply_filters('the_content', $page->post_content);
+						?>
+						</div>
 					</div>
 				</div>
 			</div>

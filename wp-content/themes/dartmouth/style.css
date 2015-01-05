@@ -4270,3 +4270,7 @@ iframe[id^='twitter-widget-'] {
 	width:100% !important;
 	height: 420px;
 }
+
+.issuuembed {
+	width: 100% !important;
+}
