@@ -34,7 +34,9 @@ get_header(); ?>
 	</div>
 
 	<div class="row" id="abovefold">
-		<div class='col-md-12 text-center alert alert-info' role="alert">Interested in journalism? Apply for the D <a href="https://docs.google.com/forms/d/1Z2PzDFNEMXoRdyfBrqbim-Ph-smzkhECiphMhmQNRfk/viewform">here</a>!</div>
+			<div class='col-md-4'><div class='text-center alert alert-info' role="alert">Interested in journalism? Apply for the D <a href="https://docs.google.com/forms/d/1Z2PzDFNEMXoRdyfBrqbim-Ph-smzkhECiphMhmQNRfk/viewform">here</a>!</div></div>
+			<div class='col-md-4'><div class='text-center alert alert-info' role="alert" style="padding:5px;">Want real-world business experience? <a href="https://docs.google.com/forms/d/1DAX1PhfHP_5s7BoDO04ln_q7TxnnWGrkRGoRe2jzkGI/viewform?usp=send_form">Join The D’s Business Staff</a>!</div></div>
+			<div class='col-md-4'><div class='text-center alert alert-info' role="alert" style="padding:5px;">Want to work on Dartmouth's most visited student website? <a href="https://docs.google.com/forms/d/1qVb3n_bpGLYZFRkCyyX5iNP0UewP1b5-mhG4JxIENqE/viewform?usp=send_form">Join our tech team</a>!</div></div>
 		<div class='col-md-3' id="dailynews">
 			<?php
 			$args = array(
