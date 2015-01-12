@@ -1092,6 +1092,11 @@ div.wp-caption.alignright .wp-caption-text {
 	text-align:center;
 }
 
+.ad img {
+	max-width: 100%;
+	height: inherit;
+}
+
 #abovefold {
 	margin-top: 10px;
 }
