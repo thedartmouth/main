@@ -158,6 +158,18 @@ get_header(); ?>
 				</div>
 
 				<div class="row"><div class="line"></div></div>
+
+				<div class="section-preview row">
+					<?php
+					    $category_id = get_cat_ID( 'mirror' );
+					    $category_link = get_category_link( $category_id );
+					?>
+
+					<h2 class="green"><a href="<?php echo esc_url( $category_link ); ?>">The Mirror</a></h2>
+					<?php show_category_preview('mirror') ?>
+				</div>
+
+				<div class="row"><div class="line"></div></div>
 				
 				<div class="section-preview row">
 					<?php
