@@ -8,9 +8,6 @@
     z-index: 0;
     height: 50px;
   }
-  h1{
-    font-size: 36px;
-  }
   .backbutton:hover {
     opacity: 1;
     cursor: pointer;
@@ -53,6 +50,16 @@
     opacity: 1;
     cursor: pointer;
   }
+  #footer {
+    clear: both;
+    position: absolute;
+    z-index: 10;
+    height: 3em;
+    max-width: 50%;
+    right:0px;
+    margin: auto 1em 1em auto;
+    font-size: 12px;
+}
 
   </style>
   <a href="<?php bloginfo('url');?>"><div class="backbutton">
@@ -87,3 +94,5 @@
         Collis Center
         </div></a></div>
       </div>
+      <div id="footer" class="text-right">Photographs by Natalie Cantave, The Dartmouth Senior Staff, and Abiah Pritchard, The Dartmouth Staff.  Text by James Jia.
+Historical information from: Meacham, Scott, and Joseph Mehling. Dartmouth College: An Architectural Tour. New York: Princeton Architectural, 2008. Print.</div>
