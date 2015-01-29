@@ -1144,6 +1144,7 @@ div.wp-caption.alignright .wp-caption-text {
   	border: 1px solid #d6e9c6;
   	display: block !important;
   	margin-top: -5px;
+  	min-height: 80px;
   	/*max-width: 80%;*/
 }
 
@@ -3537,7 +3538,6 @@ a.post-thumbnail:hover {
 
 	.header-main {
 		padding-right: 0;
-		min-height: 145px;
 	}
 
 	.search-toggle {
