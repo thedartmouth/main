@@ -15,15 +15,14 @@ get_header(); ?>
 
 <div id="main-content" class="main-content">
 
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
 	<div class="special-issue container">
 			<div class="text-center special-issue-header">Moving Dartmouth Forward</div>
 			<nav role="navigation" class="navigation site-navigation extra-navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'extra', 'menu_class' => 'nav-menu col-md-12' ) ); ?>
 			</nav>
 		</div>
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
 			<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
