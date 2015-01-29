@@ -78,10 +78,11 @@ function dartmouth_setup() {
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'dartmouth-full-width', 1038, 576, true );
 
-	// This theme uses wp_nav_menu() in two locations.
+	// This theme uses wp_nav_menu() in two locations, plus an extra menu.
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'dartmouth' ),
-		'secondary' => __( 'Secondary menu in left sidebar', 'dartmouth' ),
+		'secondary' => __( 'Secondary menu to the right of the masthead', 'dartmouth' ),
+		'extra' => __( 'Extra menu below header menu', 'dartmouth' ),
 	) );
 
 	/*
