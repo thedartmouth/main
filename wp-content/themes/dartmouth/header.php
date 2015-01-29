@@ -70,8 +70,14 @@
 					<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'dartmouth' ); ?></a>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu col-md-8' ) ); ?>
 					<div class="form-search col-md-4"><?php get_search_form(); ?></div>
-				</div>		
+				</div>
 			</nav>
+			<div class="special-issue">
+			<div class="text-center special-issue-header">Moving Dartmouth Forward</div>
+			<nav role="navigation" class="navigation site-navigation extra-navigation">
+				<?php wp_nav_menu( array( 'theme_location' => 'extra', 'menu_class' => 'nav-menu col-md-12' ) ); ?>
+			</nav>
+		</div>
 		</div>
 	</header><!-- #masthead -->
 
