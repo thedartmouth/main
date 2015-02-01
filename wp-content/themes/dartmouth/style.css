@@ -994,6 +994,9 @@ div.wp-caption.alignright .wp-caption-text {
 	height: 25px !important;
 }
 
+.gsib_a {
+    padding: 0px 6px 0px !important;
+}
 /* Secondary Navigation */
 
 .secondary-navigation {
@@ -1020,7 +1023,6 @@ div.wp-caption.alignright .wp-caption-text {
 
 .secondary-navigation li:last-child {
 	border-right: 1px #999 solid;
-	margin: 4px 0;
 	padding: 0 10px 0 12px;
 }
 
