@@ -83,6 +83,7 @@ function dartmouth_setup() {
 		'primary'   => __( 'Top primary menu', 'dartmouth' ),
 		'secondary' => __( 'Secondary menu to the right of the masthead', 'dartmouth' ),
 		'extra' => __( 'Extra menu below header menu', 'dartmouth' ),
+		'ad-links' => __( 'Paid advertisement links at the bottom of the page', 'dartmouth' ),
 	) );
 
 	/*

@@ -994,9 +994,7 @@ div.wp-caption.alignright .wp-caption-text {
 	height: 25px !important;
 }
 
-.gsib_a {
-    padding: 0px 6px 0px !important;
-}
+
 /* Secondary Navigation */
 
 .secondary-navigation {
@@ -1147,8 +1145,38 @@ div.wp-caption.alignright .wp-caption-text {
   	display: block !important;
   	margin-top: -5px;
   	margin-bottom: 10px;
-  	min-height: 80px;
   	/*max-width: 80%;*/
+}
+
+/* Ad Links Navigation */
+
+.links-navigation {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	font-size: 12px;
+	margin: 0px auto 20px auto;
+	display:block;
+
+}
+
+.links-navigation ul{
+	border-left: 1px #999 solid;
+	list-style:none;
+	margin: 0 auto;
+	min-height: 100%;
+	column-count:3;
+    -moz-column-count:3;
+    -webkit-column-count:3;
+}
+
+.links-navigation li {
+	border-right: 1px #999 solid;
+	list-style:none;
+	margin: 0 auto;
+}
+
+
+.links-navigation a {
+	color: inherit;
 }
 
 /**

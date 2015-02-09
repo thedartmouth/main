@@ -22,6 +22,12 @@
 				<div class="col-md-8"><?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?></div>
 				<div class="col-md-1"></div>
 			</nav>
+		<nav role="navigation" class="navigation site-navigation links-navigation">
+			<h4 class="row text-center">Links</h4>
+			<div class="container">
+				<?php wp_nav_menu( array( 'theme_location' => 'ad-links', 'menu_class' => 'row' ) ); ?>
+			</div>
+		</nav>
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
     
