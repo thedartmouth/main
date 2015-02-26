@@ -232,4 +232,10 @@ get_header(); ?>
 </div><!-- #main-content -->
 
 <?php
-get_footer();
+get_footer(); ?>
+<nav role="navigation" class="navigation site-navigation links-navigation">
+	<div class="row text-center"><big>Links</big></div>
+	<div class="container">
+		<?php wp_nav_menu( array( 'theme_location' => 'ad-links', 'menu_class' => 'row' ) ); ?>
+	</div>
+</nav>
