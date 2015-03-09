@@ -236,6 +236,6 @@ get_footer(); ?>
 <nav role="navigation" class="navigation site-navigation links-navigation">
 	<div class="row text-center"><big>Links</big></div>
 	<div class="container">
-		<?php wp_nav_menu( array( 'theme_location' => 'ad-links', 'menu_class' => 'row' ) ); ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'ad-links', 'menu_class' => 'row text-center' ) ); ?>
 	</div>
 </nav>
