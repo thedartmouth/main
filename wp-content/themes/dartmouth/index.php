@@ -34,12 +34,12 @@ get_header(); ?>
 	</div>
 
 	<div class="row" id="abovefold">
-		<div class="special-issue container">
+		<!-- <div class="special-issue container">
 				<div class="text-center special-issue-header">Moving Dartmouth Forward</div>
 				<nav role="navigation" class="navigation site-navigation extra-navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'extra', 'menu_class' => 'nav-menu col-md-12' ) ); ?>
 				</nav>
-			</div>
+			</div> -->
 		<div class='col-md-3' id="dailynews">
 			<?php
 			$args = array(

@@ -17,12 +17,12 @@ get_header(); ?>
 			<div class="ad">
 				<?php show_oncampus_web_ad("728", "90", "536871729", "a33db12fcb") ?>
 			</div>
-		<div class="special-issue container">
+		<!-- <div class="special-issue container">
 				<div class="text-center special-issue-header">Moving Dartmouth Forward</div>
 				<nav role="navigation" class="navigation site-navigation extra-navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'extra', 'menu_class' => 'nav-menu col-md-12' ) ); ?>
 				</nav>
-			</div>
+			</div> -->
 			<?php if ( have_posts() ) : ?>
 			<div class="col-md-8">
 				<header class="archive-header">
