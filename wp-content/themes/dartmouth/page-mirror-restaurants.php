@@ -73,7 +73,7 @@
 
         <div class="col-md-4">
         <img class="img-responsive mirrorimg" src="<?php bloginfo('url');?>/wp-content/uploads/2015/04/4.3.15.Mirror.thaiorchid2_Tiffany.Zhai_.jpg">
-        <a href="<?php bloginfo('url');?>/2015/04/02/thai-orchid/"><div class="mirrorimgoverlay">
+        <a href="<?php bloginfo('url');?>/2015/04/03/thai-orchid/"><div class="mirrorimgoverlay">
         Thai Orchid
         </div></a>
         </div>
