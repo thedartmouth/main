@@ -34,12 +34,8 @@ get_header(); ?>
 	</div>
 
 	<div class="row" id="abovefold">
-		<!-- <div class="special-issue container">
-				<div class="text-center special-issue-header">Moving Dartmouth Forward</div>
-				<nav role="navigation" class="navigation site-navigation extra-navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'extra', 'menu_class' => 'nav-menu col-md-12' ) ); ?>
-				</nav>
-			</div> -->
+			<div class='col-md-6'><div class='text-center alert alert-success' role="alert">Want real-world business experience? <a target="_blank" href="https://docs.google.com/forms/d/1DAX1PhfHP_5s7BoDO04ln_q7TxnnWGrkRGoRe2jzkGI/viewform">Join The D’s Business Staff</a>!</div></div>
+			<div class='col-md-6'><div class='text-center alert alert-success' role="alert">Want to work on Dartmouth's most visited student website? <a target="_blank" href="https://docs.google.com/forms/d/1qVb3n_bpGLYZFRkCyyX5iNP0UewP1b5-mhG4JxIENqE/viewform">Join our tech team</a>!</div></div>
 		<div class='col-md-3' id="dailynews">
 			<?php
 			$args = array(
