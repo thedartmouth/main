@@ -4408,3 +4408,9 @@ iframe[id^='twitter-widget-'] {
 .issuuembed {
 	width: 100% !important;
 }
+
+@media (min-width : 1200px) {
+	.application-alert {
+		padding:5px !important;
+	}
+}
