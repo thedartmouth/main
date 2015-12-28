@@ -35,9 +35,9 @@ get_header(); ?>
 
 	<div class="row" id="abovefold">
 		<!-- Application banners -->
-		<!-- <div class='col-md-4'><div class='text-center alert alert-success' role="alert">Interested in journalism? Apply for the D <a target="_blank" href="https://docs.google.com/a/thedartmouth.com/forms/d/1Ugpiab_T0S0szVvQJygKMpMKmVYLVvGFy-olTDKRJxY/viewform">here</a>!</div></div> -->
-		<!-- <div class='col-md-4'><div class='text-center alert alert-success application-alert' role="alert">Want real-world business experience? <a target="_blank" href="https://docs.google.com/forms/d/1DAX1PhfHP_5s7BoDO04ln_q7TxnnWGrkRGoRe2jzkGI/viewform">Join The D’s Business Staff</a>!</div></div> -->
-		<!-- <div class='col-md-4'><div class='text-center alert alert-success application-alert' role="alert">Want to work on Dartmouth's most visited student site? <a target="_blank" href="https://docs.google.com/forms/d/1qVb3n_bpGLYZFRkCyyX5iNP0UewP1b5-mhG4JxIENqE/viewform">Join our tech team</a>!</div></div> -->
+		<div class='col-md-4'><div class='text-center alert alert-success' role="alert">Interested in journalism? Apply for the D <a target="_blank" href="https://docs.google.com/a/thedartmouth.com/forms/d/1Ugpiab_T0S0szVvQJygKMpMKmVYLVvGFy-olTDKRJxY/viewform">here</a>!</div></div>
+		<div class='col-md-4'><div class='text-center alert alert-success application-alert' role="alert">Want real-world business experience? <a target="_blank" href="https://docs.google.com/forms/d/1DAX1PhfHP_5s7BoDO04ln_q7TxnnWGrkRGoRe2jzkGI/viewform">Join The D’s Business Staff</a>!</div></div>
+		<div class='col-md-4'><div class='text-center alert alert-success application-alert' role="alert">Want to work on Dartmouth's most visited student site? <a target="_blank" href="https://docs.google.com/forms/d/1qVb3n_bpGLYZFRkCyyX5iNP0UewP1b5-mhG4JxIENqE/viewform">Join our tech team</a>!</div></div>
 		<div class='col-md-3' id="dailynews">
 			<?php
 			$args = array(
