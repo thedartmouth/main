@@ -1,17 +1,20 @@
 <?php
-/*
+/**
 Plugin Name: Bulk Move
 Plugin Script: bulk-move.php
 Plugin URI: http://sudarmuthu.com/wordpress/bulk-move
-Description: Bulk move posts from selected categories or tags.
-Version: 1.0
+Description: Move or remove posts in bulk from one category or tag to another
+Version: 1.2.1
 Donate Link: http://sudarmuthu.com/if-you-wanna-thank-me
 License: GPL
 Author: Sudar
 Author URI: http://sudarmuthu.com/
+Text Domain: bulk-move
+Domain Path: languages/
 
 === RELEASE NOTES ===
 Checkout readme file for release notes
+*/
 
 /*  Copyright 2009  Sudar Muthu  (email : sudar@sudarmuthu.com)
 
@@ -29,24 +32,159 @@ Checkout readme file for release notes
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-class Bulk_Move {
-    const VERSION               = '1.0';
+/**
+ * @package    Bulk_Move
+ * @subpackage core
+ * @author     Sudar
+ * @version    1.2.1
+ */
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+/**
+ * Main Plugin class for Bulk Move
+ *
+ * Singleton @since 1.2.0
+ */
+final class Bulk_Move {
+    /**
+     * @var Bulk_Move The one true Bulk_Move
+     * @since 1.2.0
+     */
+    private static $instance;
+
+    // version
+    const VERSION                = '1.2.1';
 
     // page slugs
-    const POSTS_PAGE_SLUG       = 'bulk-move-posts';
+    const POSTS_PAGE_SLUG        = 'bulk-move-posts';
 
     // JS constants
-    const JS_HANDLE             = 'bulk-move';
-    const JS_VARIABLE           = 'BULK_MOVE';
+    const JS_HANDLE              = 'bulk-move';
+    const JS_VARIABLE            = 'BULK_MOVE';
+
+    // CSS constants
+    const CSS_HANDLE             = 'bulk-move';
+
+    // meta boxes for move posts
+    const BOX_CATEGORY           = 'bm_move_category';
+    const BOX_CATEGORY_BY_TAG    = 'bm_move_category_by_tag';
+    const BOX_TAG                = 'bm_move_tag';
+    const BOX_DEBUG              = 'bm_debug';
+
+    // options
+    const SCRIPT_TIMEOUT_OPTION  = 'bm_max_execution_time';
+
+    // path variables
+    // Ideally these should be constants, but because of PHP's limitations, these are static varaibles
+    static $PLUGIN_DIR;
+    static $PLUGIN_URL;
+    static $PLUGIN_FILE;
 
     /**
-     * Default constructor
+     * Main Bulk_Move Instance
+     *
+     * Insures that only one instance of Bulk_Move exists in memory at any one
+     * time. Also prevents needing to define globals all over the place.
+     *
+     * @since 1.2.0
+     * @static
+     * @staticvar array $instance
+     * @uses Bulk_Move::setup_paths() Setup the plugin paths
+     * @uses Bulk_Move::includes() Include the required files
+     * @uses Bulk_Move::load_textdomain() Load text domain for translation
+     * @uses Bulk_Move::setup_actions() Setup the hooks and actions
+     * @see BULK_MOVE()
+     * @return The one true BULK_MOVE
      */
-    public function __construct() {
-        // Load localization domain
-        $this->translations = dirname( plugin_basename( __FILE__ ) ) . '/languages/' ;
-        load_plugin_textdomain( 'bulk-move', FALSE, $this->translations );
+    public static function instance() {
+        if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Bulk_Move ) ) {
+            self::$instance = new Bulk_Move;
+            self::$instance->setup_paths();
+            self::$instance->includes();
+            self::$instance->load_textdomain();
+            self::$instance->setup_actions();
+        }
+        return self::$instance;
+    }
 
+    /**
+     * Throw error on object clone
+     *
+     * The whole idea of the singleton design pattern is that there is a single
+     * object therefore, we don't want the object to be cloned.
+     *
+     * @since  1.2.0
+     * @access protected
+     * @return void
+     */
+    public function __clone() {
+        // Cloning instances of the class is forbidden
+        _doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'bulk-move' ), '1.2.0' );
+    }
+
+    /**
+     * Disable unserializing of the class
+     *
+     * @since  1.2.0
+     * @access protected
+     * @return void
+     */
+    public function __wakeup() {
+        // Unserializing instances of the class is forbidden
+        _doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'bulk-move' ), '1.2.0' );
+    }
+
+    /**
+     * Setup plugin constants
+     *
+     * @access private
+     * @since  1.2.0
+     * @return void
+     */
+    private function setup_paths() {
+        // Plugin Folder Path
+        self::$PLUGIN_DIR = plugin_dir_path( __FILE__ );
+
+        // Plugin Folder URL
+        self::$PLUGIN_URL = plugin_dir_url( __FILE__ );
+
+        // Plugin Root File
+        self::$PLUGIN_FILE = __FILE__;
+    }
+
+    /**
+     * Include required files
+     *
+     * @access private
+     * @since  1.2.0
+     * @return void
+     */
+    private function includes() {
+        require_once self::$PLUGIN_DIR . '/include/class-bulk-move-posts.php';
+        require_once self::$PLUGIN_DIR . '/include/class-bulk-move-util.php';
+    }
+
+    /**
+     * Loads the plugin language files
+     *
+     * @since  1.2.0
+     */
+    public function load_textdomain() {
+        // Load localization domain
+        $this->translations = dirname( plugin_basename( self::$PLUGIN_FILE ) ) . '/languages/';
+        load_plugin_textdomain( 'bulk-move', FALSE, $this->translations );
+    }
+
+    /**
+     * Loads the plugin's actions and hooks
+     *
+     * @access private
+     * @since  1.2.0
+     * @return void
+     */
+    private function setup_actions() {
         // Register hooks
         add_action( 'admin_menu', array( &$this, 'add_menu' ) );
         add_action( 'admin_init', array( &$this, 'request_handler' ) );
@@ -60,77 +198,110 @@ class Bulk_Move {
      */
 	function add_menu() {
 
-        $this->post_page = add_submenu_page( 'tools.php', __( 'Bulk Move' , 'bulk-move'), __( 'Bulk Move' , 'bulk-move'), 'edit_posts', self::POSTS_PAGE_SLUG, array( &$this, 'display_posts_page' ) );
+        $this->post_page = add_submenu_page( 'tools.php', __( 'Bulk Move' , 'bulk-move'), __( 'Bulk Move' , 'bulk-move'), 'edit_others_posts', self::POSTS_PAGE_SLUG, array( &$this, 'display_posts_page' ) );
 
         // enqueue JavaScript
         add_action( 'admin_print_scripts-' . $this->post_page, array( &$this, 'add_script') );
+
+        // enqueue CSS
+        add_action( 'admin_print_scripts-' . $this->post_page, array( &$this, 'add_styles') );
+
+        // meta boxes
+		add_action( "load-{$this->post_page}", array( &$this, 'add_move_posts_settings_panel' ) );
+        add_action( "add_meta_boxes_{$this->post_page}", array( &$this, 'add_move_posts_meta_boxes' ) );
 	}
+
+    /**
+     * Add settings Panel for move posts page
+     *
+     * @since 1.0
+     */
+	function add_move_posts_settings_panel() {
+
+		/**
+		 * Create the WP_Screen object using page handle
+		 */
+		$this->move_posts_screen = WP_Screen::get( $this->post_page );
+
+		/**
+		 * Content specified inline
+		 */
+		$this->move_posts_screen->add_help_tab(
+			array(
+				'title'    => __( 'About Plugin', 'bulk-move' ),
+				'id'       => 'about_tab',
+				'content'  => '<p>' . __( 'This plugin allows you to move posts in bulk from selected categories to another category', 'bulk-move' ) . '</p>',
+				'callback' => false
+			)
+		);
+
+        // Add help sidebar
+		$this->move_posts_screen->set_help_sidebar(
+            '<p><strong>' . __( 'More information', 'bulk-move' ) . '</strong></p>' .
+            '<p><a href = "http://sudarmuthu.com/wordpress/bulk-move">' . __( 'Plugin Homepage/support', 'bulk-move' ) . '</a></p>' .
+            '<p><a href = "http://sudarmuthu.com/blog">' . __( "Plugin author's blog", 'bulk-move' ) . '</a></p>' .
+            '<p><a href = "http://sudarmuthu.com/wordpress/">' . __( "Other Plugin's by Author", 'bulk-move' ) . '</a></p>'
+        );
+
+        /* Trigger the add_meta_boxes hooks to allow meta boxes to be added */
+        do_action( 'add_meta_boxes_' . $this->post_page, null );
+        do_action( 'add_meta_boxes', $this->post_page, null );
+
+        /* Enqueue WordPress' script for handling the meta boxes */
+        wp_enqueue_script( 'postbox' );
+	}
+
+    /**
+     * Register meta boxes for move posts page
+     *
+     * @since 1.0
+     */
+    function add_move_posts_meta_boxes() {
+        add_meta_box( self::BOX_CATEGORY, __( 'Bulk Move By Category', 'bulk-move' ), 'Bulk_Move_Posts::render_move_category_box', $this->post_page, 'advanced' );
+        add_meta_box( self::BOX_TAG, __( 'Bulk Move By Tag', 'bulk-move' ), 'Bulk_Move_Posts::render_move_tag_box', $this->post_page, 'advanced' );
+        add_meta_box( self::BOX_CATEGORY_BY_TAG, __( 'Bulk Move Category By Tag', 'bulk-move' ), 'Bulk_Move_Posts::render_move_category_by_tag_box', $this->post_page, 'advanced' );
+        add_meta_box( self::BOX_DEBUG, __( 'Debug Information', 'bulk-move' ), 'Bulk_Move_Posts::render_debug_box', $this->post_page, 'advanced', 'low' );
+    }
 
     /**
      * Show the Admin page
      */
     function display_posts_page() {
 ?>
-    <div class="wrap">
-        <?php screen_icon(); ?>
-        <h2><?php _e( 'Bulk Move Posts', 'bulk-move' );?></h2>
+<div class="wrap">
+    <h2><?php _e( 'Bulk Move Posts', 'bulk-move' );?></h2>
 
-        <div id="post-body-content">
-            <div class="updated" >
-                <p><strong><?php _e( 'WARNING: Posts moved once cannot be undone. Use with caution.', 'bulk-move' ); ?></strong></p>
+    <form method = "post">
+<?php
+        // nonce for bulk move
+        wp_nonce_field( 'sm-bulk-move-posts', 'sm-bulk-move-posts-nonce' );
+
+        /* Used to save closed meta boxes and their order */
+        wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
+        wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
+?>
+    <div id = "poststuff">
+        <div id="post-body" class="metabox-holder columns-2">
+
+            <div id="post-body-content">
+                <div class="updated" >
+                    <p><strong><?php _e( 'WARNING: Posts moved once cannot be retrieved back. Use with caution.', 'bulk-move' ); ?></strong></p>
+                </div>
+            </div><!-- #post-body-content -->
+
+            <div id="postbox-container-1" class="postbox-container">
+                <iframe frameBorder="0" height = "1000" src = "http://sudarmuthu.com/projects/wordpress/bulk-move/sidebar.php?color=<?php echo get_user_option( 'admin_color' ); ?>&version=<?php echo self::VERSION; ?>"></iframe>
             </div>
-        </div><!-- #post-body-content -->
 
-        <form method = "post">
+            <div id="postbox-container-2" class="postbox-container">
+                <?php do_meta_boxes( '', 'advanced', null ); ?>
+            </div> <!-- #postbox-container-2 -->
 
-        <h3><?php _e('By Category', 'bulk-move'); ?></h3>
-        <h4><?php _e('On the left side, select the category whose post you want to move. In the right side select the category to which you want the posts to be moved.', 'bulk-move') ?></h4>
+        </div> <!-- #post-body -->
+    </div><!-- #poststuff -->
 
-        <fieldset class="options">
-		<table class="optiontable">
-            <tr>
-                <td scope="row" >
-                <select name="smbm_selected_cat">
-<?php
-        $categories =  get_categories(array('hide_empty' => false));
-        foreach ($categories as $category) {
-?>
-                    <option value="<?php echo $category->cat_ID; ?>">
-                    <?php echo $category->cat_name; ?> (<?php echo $category->count . " "; _e("Posts", 'bulk-move'); ?>)
-                    </option>
-<?php
-        }
-?>
-                </select>
-                ==>
-                </td>
-                <td scope="row" >
-                <select name="smbm_mapped_cat">
-                <option value="-1"><?php _e("Remove Category", 'bulk-move'); ?></option>
-<?php
-        foreach ($categories as $category) {
-?>
-                    <option value="<?php echo $category->cat_ID; ?>">
-                    <?php echo $category->cat_name; ?> (<?php echo $category->count . " "; _e("Posts", 'bulk-move'); ?>)
-                    </option>
-<?php
-        }
-?>
-                </select>
-                </td>
-            </tr>
-
-		</table>
-		</fieldset>
-        <p class="submit">
-            <button type="submit" name="smbm_action" value = "bulk-move-cats" class="button-primary"><?php _e( 'Bulk Move ', 'bulk-move' ) ?>&raquo;</button>
-        </p>
-
-<?php wp_nonce_field('bulk-move-cats'); ?>
-
-		</form>
-        <p><em><?php _e("If you are looking to delete posts in bulk, try out my ", 'bulk-move'); ?> <a href = "http://sudarmuthu.com/wordpress/bulk-delete"><?php _e("Bulk Delete Plugin", 'bulk-move');?></a>.</em></p>
-    </div>
+    </form>
+</div><!-- .wrap -->
 <?php
         // Display credits in Footer
         add_action( 'in_admin_footer', array( &$this, 'admin_footer' ) );
@@ -148,13 +319,11 @@ class Bulk_Move {
      * Enqueue JavaScript
      */
     function add_script() {
-        global $wp_scripts;
-
         wp_enqueue_script( self::JS_HANDLE, plugins_url( '/js/bulk-move.js', __FILE__ ), array( 'jquery' ), self::VERSION, TRUE );
 
         // JavaScript messages
         $msg = array(
-            'move_warning'      => __( 'Are you sure you want to move all the selected posts', 'bulk-move' )
+            'move_warning'  => __( 'Are you sure you want to move all the selected posts', 'bulk-move' )
         );
 
         $error = array(
@@ -166,55 +335,25 @@ class Bulk_Move {
     }
 
     /**
+     * Enqueue styles
+     *
+     * @since 1.2.0
+     */
+    function add_styles() {
+        wp_enqueue_style( self::CSS_HANDLE, plugins_url( '/css/bulk-move.css', __FILE__ ), false, self::VERSION );
+    }
+
+    /**
      * Request Handler
      */
     function request_handler() {
-        if (isset($_POST['smbm_action'])) {
-
-            $my_query = new WP_Query;
-            check_admin_referer( 'bulk-move-cats');
-
-            switch($_POST['smbm_action']) {
-
-                case "bulk-move-cats":
-                    // move by cats
-                    $old_cat = absint($_POST['smbm_selected_cat']);
-                    $new_cat   = ($_POST['smbm_mapped_cat'] == -1) ? -1 : absint($_POST['smbm_mapped_cat']);
-                    $posts = $my_query->query(array('category__in'=>array($old_cat), 'post_type'=>'post', 'nopaging'=>'true'));
-                    foreach ($posts as $post) {
-                        
-                        $current_cats = wp_get_post_categories($post->ID);
-                        $current_cats = array_diff($current_cats, array($old_cat));
-                        if ($new_cat != -1) {
-                            $current_cats[] = $new_cat;
-                        }
-
-                        if (count($current_cats) == 0) {
-                            $current_cats = array(get_option('default_category'));
-                        }
-                        $current_cats = array_values($current_cats);
-                        wp_update_post(array('ID'=>$post->ID,'post_category'=>$current_cats));
-                    }
-
-                    $this->msg = sprintf( _n( 'Moved %d post from the selected category', 'Moved %d posts from the selected category' , count( $posts ), 'bulk-move' ), count( $posts ) );
-
-                    break;
-
-                case "bulk-move-tags":
-                    // move by tags
-                    $selected_tags = $_POST['smbm_tags'];
-                    $posts = $my_query->query(array('tag__in'=>$selected_tags, 'post_type'=>'post', 'nopaging'=>'true'));
-
-                    foreach ($posts as $post) {
-                        wp_move_post($post->ID);
-                    }
-                    
-                    break;
-            }
-
-            // hook the admin notices action
-            add_action( 'admin_notices', array( &$this, 'moved_notice' ), 9 );
+        // controller
+        if ( isset( $_POST['bm_action'] ) ) {
+            do_action( 'bm_' . $_POST['bm_action'], $_POST );
         }
+
+        // hook the admin notices action
+        add_action( 'admin_notices', array( &$this, 'moved_notice' ), 9 );
     }
 
     /**
@@ -248,6 +387,22 @@ class Bulk_Move {
     }
 }
 
-// Start this plugin once all other plugins are fully loaded
-add_action( 'init', 'Bulk_Move' ); function Bulk_Move() { global $Bulk_Move; $Bulk_Move = new Bulk_Move(); }
+/**
+ * The main function responsible for returning the one true Bulk_Move
+ * Instance to functions everywhere.
+ *
+ * Use this function like you would a global variable, except without needing
+ * to declare the global.
+ *
+ * Example: `$bulk_move = BULK_MOVE();`
+ *
+ * @since  1.2.0
+ * @return object The one true Bulk_Move Instance
+ */
+function BULK_MOVE() {
+	return Bulk_Move::instance();
+}
+
+// Get BULK_MOVE Running
+BULK_MOVE();
 ?>

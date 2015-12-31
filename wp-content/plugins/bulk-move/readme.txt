@@ -2,17 +2,17 @@
 Contributors: sudar  
 Tags: post, bulk, move  
 Donate Link: http://sudarmuthu.com/if-you-wanna-thank-me  
-Requires at least: 2.5  
-Tested up to: 3.6.1  
-Stable tag: 1.0  
-	
-Bulk move posts from selected categories or tags
+Requires at least: 3.8  
+Tested up to: 3.9.1  
+Stable tag: 1.2.1  
+
+Move or remove posts in bulk by category or by tag.
 
 == Description ==
 
-Bulk Move is a WordPress Plugin which can be used to move posts in bulk from one category to another. This Plugin can also be used to remove posts from a certain category.
+Bulk Move is a WordPress Plugin which can be used to move posts in bulk from one category or tag to another. This Plugin can also be used to remove posts from a certain category or tag.
 
-If you looking for deleting posts, instead of just moving them, then use [Bulk Delete Plugin][2] instead.
+If you looking for deleting posts, instead of just moving them, then use [Bulk Delete Plugin][2] instead.
 
 ### Development
 
@@ -56,44 +56,68 @@ If you are looking for ideas, then you can start with one of the following TODO 
 
 Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
 
+== Readme Generator ==
+
+This Readme file was generated using <a href = 'http://sudarmuthu.com/wordpress/wp-readme'>wp-readme</a>, which generates readme files for WordPress Plugins.
 == Changelog ==
 
-### v1.0 (2013-10-13) (Dev time: 3 hours)
+= v1.2.1 (2014-06-05) (Dev time: 0.5 hours) =
+- Tweak: Indent sub categories in the category dropdown. (Issue #10)
+
+= v1.2 (2014-04-21) (Dev time: 6 hours) =
+- Add: Add the ability to specify the PHP script timeout. Thanks https://github.com/grantnorwood
+- Add: Add uninstall.php file to remove option when plugin is removed. Thanks https://github.com/grantnorwood
+- Fix: Clean whitespace in HTML attributes. Thanks https://github.com/grantnorwood
+- Add: Add the ability to move categories by tag. Thanks https://github.com/grantnorwood
+- Tweak: Change the capability to `edit_others_posts`. (issue #7)
+- Tweak: Make Bulk_Move class as a singleton
+- Add: Add WordPress version to debug information. (issue #6)
+
+= v1.1.1 (2014-02-12) (Dev time: 0.5 hours) =
+- Add: Add German translation
+- Fix: Fix link to Bulk Delete plugin
+
+= v1.1 (2013-12-19) (Dev time: 3 hours) =
+- Fix: Change the content displayed in sidebar
+- Tweak: Remove `screen_icon` which is not used in WordPress 3.8
+- New: Add support moving posts by tags
+
+= v1.0 (2013-10-13) (Dev time: 3 hours) =
 - Revamped GUI
 
-### v0.9 (2012-07-10) (Dev time: 0.5 hour)
-*   Added Hindi translations
-*   Added Lithuanian translations
+= v0.9 (2012-07-10) (Dev time: 0.5 hour) =
+- Added Hindi translations
+- Added Lithuanian translations
 
 = v0.8 (2012-01-13) =
-*   Added Bulgarian translations
+- Added Bulgarian translations
 
 = v0.7 (2011-12-16) =
-*   Removed spaces from first line which was starting the output
+- Removed spaces from first line which was starting the output
 
 = v0.6 (2011-11-19) =
-*   Added Spanish translation
+- Added Spanish translation
 
 = v0.5 (2011-08-25) =
-*   Fixed a warning and added Turkish translation
+- Fixed a warning and added Turkish translation
 
 = v0.4 (2011-02-08) =
-*   Added Brazilian Portuguese translation
+- Added Brazilian Portuguese translation
 
 = v0.3 (2010-11-28) =
-*   Fixes for blank screen issue. Thanks Carlos
+- Fixes for blank screen issue. Thanks Carlos
 
 = v0.2 (2009-05-08) =
-*   Second version
+- Second version
 
 = v0.1 (2009-02-04) =
-*   First version
+- First version
 
 == Upgrade Notice ==
 
 = 1.0 =
 Revamped GUI
 
-== Readme Generator ==
+= v1.2 =
+Added the ability to move posts from tags to categories
 
-This Readme file was generated using <a href = 'http://sudarmuthu.com/wordpress/wp-readme'>wp-readme</a>, which generates readme files for WordPress Plugins.
