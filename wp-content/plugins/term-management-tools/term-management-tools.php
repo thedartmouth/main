@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Term Management Tools
-Version: 1.1.1
+Version: 1.1.4
 Description: Allows you to merge terms and set term parents in bulk
 Author: scribu
 Author URI: http://scribu.net/
@@ -12,14 +12,14 @@ Domain Path: /lang
 
 class Term_Management_Tools {
 
-	function init() {
+	static function init() {
 		add_action( 'load-edit-tags.php', array( __CLASS__, 'handler' ) );
 		add_action( 'admin_notices', array( __CLASS__, 'notice' ) );
 
 		load_plugin_textdomain( 'term-management-tools', '', basename( dirname( __FILE__ ) ) . '/lang' );
 	}
 
-	private function get_actions( $taxonomy ) {
+	private static function get_actions( $taxonomy ) {
 		$actions = array(
 			'merge'        => __( 'Merge', 'term-management-tools' ),
 			'change_tax'   => __( 'Change taxonomy', 'term-management-tools' ),
@@ -34,7 +34,7 @@ class Term_Management_Tools {
 		return $actions;
 	}
 
-	function handler() {
+	static function handler() {
 		$defaults = array(
 			'taxonomy' => 'post_tag',
 			'delete_tags' => false,
@@ -82,17 +82,22 @@ class Term_Management_Tools {
 		if ( !isset( $r ) )
 			return;
 
-		if ( $referer = wp_get_referer() && false !== strpos( $referer, 'edit-tags.php' ) ) {
+		$referer = wp_get_referer();
+		if ( $referer && false !== strpos( $referer, 'edit-tags.php' ) ) {
 			$location = $referer;
 		} else {
 			$location = add_query_arg( 'taxonomy', $taxonomy, 'edit-tags.php' );
+		}
+
+		if ( isset( $_REQUEST['post_type'] ) && 'post' != $_REQUEST['post_type'] ) {
+			$location = add_query_arg( 'post_type', $_REQUEST['post_type'], $location );
 		}
 
 		wp_redirect( add_query_arg( 'message', $r ? 'tmt-updated' : 'tmt-error', $location ) );
 		die;
 	}
 
-	function notice() {
+	static function notice() {
 		if ( !isset( $_GET['message'] ) )
 			return;
 
@@ -107,7 +112,7 @@ class Term_Management_Tools {
 		}
 	}
 
-	function handle_merge( $term_ids, $taxonomy ) {
+	static function handle_merge( $term_ids, $taxonomy ) {
 		$term_name = $_REQUEST['bulk_to_tag'];
 
 		if ( !$term = term_exists( $term_name, $taxonomy ) )
@@ -118,20 +123,26 @@ class Term_Management_Tools {
 
 		$to_term = $term['term_id'];
 
+		$to_term_obj = get_term( $to_term, $taxonomy );
+
 		foreach ( $term_ids as $term_id ) {
 			if ( $term_id == $to_term )
 				continue;
 
-			$ret = wp_delete_term( $term_id, $taxonomy, array( 'default' => $to_term, 'force_default' => true ) );
+			$old_term = get_term( $term_id, $taxonomy );
 
-			if ( is_wp_error( $ret ) )
-				return false;
+			$ret = wp_delete_term( $term_id, $taxonomy, array( 'default' => $to_term, 'force_default' => true ) );
+			if ( is_wp_error( $ret ) ) {
+				continue;
+			}
+
+			do_action( 'term_management_tools_term_merged', $to_term_obj, $old_term );
 		}
 
 		return true;
 	}
 
-	function handle_set_parent( $term_ids, $taxonomy ) {
+	static function handle_set_parent( $term_ids, $taxonomy ) {
 		$parent_id = $_REQUEST['parent'];
 
 		foreach ( $term_ids as $term_id ) {
@@ -147,7 +158,7 @@ class Term_Management_Tools {
 		return true;
 	}
 
-	function handle_change_tax( $term_ids, $taxonomy ) {
+	static function handle_change_tax( $term_ids, $taxonomy ) {
 		global $wpdb;
 
 		$new_tax = $_POST['new_tax'];
@@ -162,7 +173,7 @@ class Term_Management_Tools {
 		foreach ( $term_ids as $term_id ) {
 			$term = get_term( $term_id, $taxonomy );
 
-			if ( $term->parent ) {
+			if ( $term->parent && !in_array( $term->parent,$term_ids ) ) {
 				$wpdb->update( $wpdb->term_taxonomy,
 					array( 'parent' => 0 ),
 					array( 'term_taxonomy_id' => $term->term_taxonomy_id )
@@ -189,13 +200,15 @@ class Term_Management_Tools {
 			$wpdb->query( "UPDATE $wpdb->term_taxonomy SET parent = 0 WHERE term_taxonomy_id IN ($tt_ids)" );
 		}
 
-		delete_option( "{$taxonomy}_children" );
-		delete_option( "{$new_tax}_children" );
+		clean_term_cache( $tt_ids, $taxonomy );
+		clean_term_cache( $tt_ids, $new_tax );
+
+		do_action( 'term_management_tools_term_changed_taxonomy', $tt_ids, $new_tax, $taxonomy );
 
 		return true;
 	}
 
-	function script() {
+	static function script() {
 		global $taxonomy;
 
 		$js_dev = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '.dev' : '';
@@ -205,7 +218,7 @@ class Term_Management_Tools {
 		wp_localize_script( 'term-management-tools', 'tmtL10n', self::get_actions( $taxonomy ) );
 	}
 
-	function inputs() {
+	static function inputs() {
 		global $taxonomy;
 
 		foreach ( array_keys( self::get_actions( $taxonomy ) ) as $key ) {
@@ -215,11 +228,11 @@ class Term_Management_Tools {
 		}
 	}
 
-	function input_merge( $taxonomy ) {
+	static function input_merge( $taxonomy ) {
 		printf( __( 'into: %s', 'term-management-tools' ), '<input name="bulk_to_tag" type="text" size="20"></input>' );
 	}
 
-	function input_change_tax( $taxonomy ) {
+	static function input_change_tax( $taxonomy ) {
 		$tax_list = get_taxonomies( array( 'show_ui' => true ), 'objects' );
 ?>
 		<select class="postform" name="new_tax">
@@ -235,7 +248,7 @@ class Term_Management_Tools {
 <?php
 	}
 
-	function input_set_parent( $taxonomy ) {
+	static function input_set_parent( $taxonomy ) {
 		wp_dropdown_categories( array(
 			'hide_empty' => 0,
 			'hide_if_empty' => false,
