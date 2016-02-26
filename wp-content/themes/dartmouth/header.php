@@ -51,7 +51,6 @@
 			        <ul class="dropdown-menu">
 			            <li class="facebook"><a href="http://www.facebook.com/TheDartmouth" target="_blank"></a></li>
 			            <li class="twitter"><a href="http://twitter.com/thedartmouth" target="_blank"></a></li>
-			            <li class="rss"><a href="http://thedartmouth.com/rss" target="_blank"></a></li>
 			            <li class="youtube"><a href="http://www.youtube.com/user/TheDartmouthVideo/" target="_blank"></a></li>
 			            <li class="instagram"><a href="http://www.instagram.com/thedartmouth" target="_blank"></a></li>
 			        </ul>

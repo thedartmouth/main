@@ -18,7 +18,7 @@
 
 			<nav role="navigation" class="navigation site-navigation secondary-navigation">
 				<div class="col-md-1"></div>
-				<div class="copyright col-md-2">© 2015 The Dartmouth, Inc.</div>
+				<div class="copyright col-md-2">© 2016 The Dartmouth, Inc.</div>
 				<div class="col-md-8"><?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?></div>
 				<div class="col-md-1"></div>
 			</nav>
