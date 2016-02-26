@@ -1026,8 +1026,12 @@ div.wp-caption.alignright .wp-caption-text {
 	padding: 0 9px;
 }
 
+.secondary-navigation li:first-child {
+	border-left: none;
+}
+
 .secondary-navigation li:last-child {
-	border-right: 1px #999 solid;
+	border-right: none;
 	padding: 0 10px 0 12px;
 }
 
