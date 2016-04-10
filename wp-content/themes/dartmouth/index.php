@@ -207,20 +207,11 @@ get_header(); ?>
 				<div class="row"><div class="line"></div></div>
 
 				<div class="section-preview row">
-					<div class="col-md-6">
+					<div class="col-md-12">
 						<h2 class="green"><a>Today's Paper</a></h2>
 						<div>
 						<?php 
 							$page = get_page_by_path('d-issuu-url');
-							echo apply_filters('the_content', $page->post_content);
-						?>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<h2 class="green"><a>Insert</a></h2>
-						<div>
-						<?php 
-							$page = get_page_by_path('insert-issuu-url');
 							echo apply_filters('the_content', $page->post_content);
 						?>
 						</div>
